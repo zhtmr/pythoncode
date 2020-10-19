@@ -1,0 +1,3697 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>서울특별시</title>
+
+  <meta name="description" content="서울특별시 메인페이지로 주요뉴스, 시민참여, 소셜시장실, 주요서비스, 이달의 행사및축제, 분야별정보, 새소식 등의 정보 제공">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="서울특별시">
+  <meta property="og:description" content="서울특별시 메인페이지로 주요뉴스, 시민참여, 소셜시장실, 주요서비스, 이달의 행사및축제, 분야별정보, 새소식 등의 정보 제공">
+  <meta property="og:image" content="//www.seoul.go.kr/res_newseoul/images/main/seoul_bi.jpg">
+  <meta property="og:url" content="https://www.seoul.go.kr">
+
+  <link rel="stylesheet"       href="/res_newseoul/css/reset.css?20201006172702">
+  <link rel="stylesheet"       href="/res_newseoul/css/jquery.bxslider.css?20201006172702">
+  <link rel="stylesheet"       href="/res_newseoul/css/common.css?20201006172702">
+  <link rel="stylesheet"       href="/res_newseoul/css/main_new.css?20201006172702">
+  
+  <link rel="stylesheet"       href="/res_newseoul/css/jquery-ui.min.css">
+
+  <link rel="shortcut icon"     href="/res_newseoul/images/favicon.ico">
+  <link rel="apple-touch-icon"   href="/res_newseoul/images/favicon.ico" >
+
+  <link rel="canonical" href="https://www.seoul.go.kr">
+
+  
+  <script src="/res_newseoul/js/jquery-3.3.1.min.js"></script>
+  <script src="/res_newseoul/js/jquery-ui.min.js"></script>
+
+  <script src="/res_newseoul/js/common.js?20201006172702"></script>
+  <script src="/res_newseoul/js/script.js?20201006172702"></script>
+
+  <script src="/res_newseoul/js/comapp.js?20201006172702"></script>
+
+  <!--
+    자동검색완성
+   -->
+  <link href="/ksearch/res_newseoul/css/keyboard.css" rel="stylesheet" type="text/css" />
+<!--   <link href="/ksearch/res_newseoul/css/jquery-ui.min.css" rel="stylesheet" type="text/css" /> -->
+
+  <link rel="stylesheet" type="text/css" href="/ksearch/css/jquery-ui.css"><!-- jQuery UI -->
+
+   <style>
+	 /* 교통정보 없을 때 */
+		.s_banner_wrap {position: relative;height: 350px;text-align: center;background: #fff;box-sizing: border-box;overflow:hidden;}
+		.s_banner_wrap > .img {position: relative;width: 100%;height: 100%;overflow: hidden;}
+		.s_banner_wrap > .img > a { display:block; width:100%; height:100%; background: url(/res_newseoul/images/main/bg_corona_pc_0803.jpg) no-repeat 0 0;}
+		.s_banner_wrap > .img > a > img { position:absolute; left:50%; top:0; transform:translateX(-50%); }
+		.input-lists span {position: absolute;left: 50%;display: inline-block;min-width: 47px;height: 16px;color: #fff;font-size: 22px;text-align: center;font-weight: 600;letter-spacing: -0.09em;}
+		.input-lists span.result0 {top: 30px;font-size: 16px;font-weight: bold;margin-left: 25px;color: #333;}
+		.input-lists span.result1 {top: 120px;margin-left: -112px;}
+		.input-lists span.result2-1 {top: 120px;margin-left: 57px;}
+		.input-lists span.result3-1 {top: 242px;margin-left: -135px;}
+		.input-lists span.result3-2 {top: 242px;margin-left: -10px;}
+		.input-lists span.result4 {top: 242px;margin-left: 95px;}
+		.s_banner_wrap .traffic-banner {display: none}
+	
+		
+
+	 /* 교통정보와 있을 때	
+  .s_banner_wrap {position: relative;height: 350px;text-align: center;background: #fff;box-sizing: border-box;overflow:hidden;}
+  .s_banner_wrap > .img {position: relative;width: 100%;height: 230px;}
+  .s_banner_wrap > .img > a { display:block; width:100%; height:100%; }
+  .s_banner_wrap > .img > a > img {}
+  .input-lists span {position: absolute;left: 50%;display: inline-block;min-width: 47px;height: 16px;color: #fff;font-size: 24px;text-align: center;font-weight: 600;letter-spacing: -0.09em;}
+  .input-lists span.result0 {top: 16px;font-size: 16px;font-weight: bold;margin-left: 30px;color: #333;}
+  .input-lists span.result1 {top: 75px;margin-left: -108px;}
+  .input-lists span.result2-1 {top: 75px;margin-left: 57px;}
+  .input-lists span.result3-1 {top: 152px;margin-left: -131px;}
+  .input-lists span.result3-2 {top: 152px;margin-left: -10px;}
+  .input-lists span.result4 {top: 152px;margin-left: 95px;}
+	*/
+
+	/* 교통정보 및 태풍 배너랑 있을 때 
+
+	.side_banner_typhoon > .img {height: 208px}
+	.side_banner_typhoon .input-lists span.result0 {top: 11px;font-size: 16px;font-weight: bold;margin-left: 30px;color: #333;}
+  .side_banner_typhoon .input-lists span.result1 {top: 66px;margin-left: -108px;}
+  .side_banner_typhoon .input-lists span.result2-1 {top: 66px;margin-left: 57px;}
+  .side_banner_typhoon .input-lists span.result3-1 {top: 135px;margin-left: -131px;}
+  .side_banner_typhoon .input-lists span.result3-2 {top: 135px;margin-left: -10px;}
+  .side_banner_typhoon .input-lists span.result4 {top: 135px;margin-left: 95px;}
+
+	.side_banner_typhoon .rolling-traffic {margin-top: 6px;height: 80px}
+
+	.side_banner_typhoon .typhoon-banner {margin-top: 6px;height: 50px}
+
+	.side_banner_typhoon .rolling-traffic ul {height: 80px;}
+	.side_banner_typhoon .rolling-traffic ul li a {height: 80px;padding: 4px 15px 0}
+	.side_banner_typhoon .rolling-traffic ul li a p.title {font-size: 14px}
+	.side_banner_typhoon .rolling-traffic ul li a span {margin-bottom: 1px;}
+	.side_banner_typhoon .rolling-traffic ul li a span.type {font-size: 12px;}
+	.side_banner_typhoon .rolling-traffic .rt-play button {top: 6px;}
+	*/
+
+
+  </style>
+
+  <!-- 이미지배너와 충돌.. 아래한줄 슬라이딩이 안됨. -->
+  <script src="/ksearch/res_newseoul/js/jquery-1.11.1.min.js"></script>
+  <script src="/ksearch/res_newseoul/js/jquery-ui.min.js"></script>
+  <script src="/ksearch/js/jquery/jquery.deserialize.min.js"></script><!-- Form deserialization -->
+  <script src="/ksearch/js/jquery/jquery.cookie.js"></script><!-- Cookie -->
+  <script src="/ksearch/js/jquery/jquery-ui.js"></script><!--jQuery UI -->
+  <script src="/ksearch/js/search.js"></script><!-- Events -->
+  <script src="/res_newseoul/js/jquery.konan.sf.js"></script><!-- KSF -->
+  <script src="/ksearch/js/jquery/i18n/jquery.konan.sf-ko.js"></script><!-- KSF localization -->
+  <script src="/ksearch/js/jquery/jquery.placeholder.js"></script><!-- Events -->
+  <script src="/ksearch/res_newseoul/js/buildKeyboardInputs.js"></script> <!-- screen keyboard  -->
+
+  <script src="/res_newseoul/js/jquery.bxslider.js"></script>
+  <script src="/res_newseoul/js/jquery.cookie.js"></script>
+  <script src="/res_newseoul/js/tendina.min.js"></script>
+
+  <script>
+    $(function() {
+
+      // 자동완성 위젯 초기화
+      var flagAutoCompleteInitDone;
+
+       // we assume that user will not start fill-in the form immediately
+      // setTimeout(function(){flagAutoCompleteInitDone =true;}, 1000);
+
+      $('#inp_TopSearch')
+         .each(function(){  // IE11 hack
+             // first we handle 'input' event and prevent its further propagation
+             // until our variable is initialized with setTimeout() handler call
+         if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || navigator.userAgent.search('Microsoft Internet Explorer')) {
+          this.addEventListener('input',
+                 function(ev){
+                     if( typeof flagAutoCompleteInitDone === 'undefined'){
+                         ev.stopImmediatePropagation();
+                     }
+                 }, false);
+         }
+         }) // /IE11 hack
+         .autocomplete({
+          // initialize autocomplete widget
+            source: '//newsearch.seoul.go.kr/ksearch/ksf/api/suggest.do?target=complete'
+         });
+
+      //201809 add keyboard
+      /* ***** Find tagged input & textarea elements ******************* */
+      var input_search1 = document.getElementById("inp_TopSearch");
+      var keyid = "inp_TopSearch";
+      //var keyboard =VKI_buildKeyboardInputs();
+
+      var keybut = document.createElement('img');
+            keybut.src = "/ksearch/res_newseoul/images/search/keyboard.png";
+            keybut.alt = "입력도구";
+            keybut.className = "keyboardInputInitiator";
+            keybut.title = "Display keyboard interface";
+            keybut.onclick = (function(a) { return function() { VKI_show(a); }; })(keyid);
+            input_search1.parentNode.insertBefore(keybut, input_search1.nextSibling);
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "서울특별시청",
+    "url": "https://www.seoul.go.kr",
+    "sameAs": [
+      "http://blog.naver.com/haechiseoul",
+      "https://www.instagram.com/seoul_official/",
+      "https://www.youtube.com/channel/UCZUPZW5idAxYp-Asj__lVAA",
+      "https://story.kakao.com/ch/seoul",
+      "https://www.facebook.com/seoul.kr",
+      "https://twitter.com/seoulmania"
+    ]
+  }
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  
+
+
+
+
+
+<script>
+
+function fnGoDevicePage(){
+	
+	var domain 	= window.location.protocol + "//" + window.location.hostname;
+	var exec	= (domain.indexOf('localhost') > -1) ? '.html' : '.jsp';
+	var goPc	= domain + '/' + 'main/index' + exec;
+	var goMo	= domain + '/' + 'main/indexM' + exec;
+	var fullurl = document.URL + '';
+	
+	var isPcMode = $.cookie('isPcMode');	
+	
+    if(com.util.isMobile.any()){
+    	//mobile conntected
+    	if(fullurl.indexOf('/main/index.') > -1 && !(isPcMode)){
+    		window.location.href = goMo;
+    	}
+    }else{
+    	//pc conntected
+    	if(fullurl.indexOf('/main/indexM.') > -1){
+    		window.location.href = goPc;
+    	}
+    };
+}
+
+//fnGoDevicePage();
+
+</script>
+
+
+
+</head>
+
+<body ><!-- 시민참여 우선일 때 class="citizen" 추가 2019-10-02 -->
+
+  <form id="historyForm" action="//newsearch.seoul.go.kr/ksearch/search.do" method="get">
+    <input type="hidden" id="kwd" name="kwd" value="" />
+  </form>
+
+  <div id="wrap" class="main">
+
+    <div id="skip">
+      <a href="#inner_wrap">본문 내용 바로가기</a>
+    </div>
+
+    <!-- ######################################################################## -->
+<!-- 
+	menu name: Pc Homepage Banner
+--> 
+<!-- ######################################################################## -->
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<!-- 작업공지 레이어 박스 : Start -->
+	<!--<div class="div_emergency" id="div_emergency1" style="min-height: 40px;height: 96px;z-index: 0">
+		<section class="emergency_box">
+			<h1 class="sr-only">데이터센터 UPS 교체 작업에 따른 시스템 작업 공지</h1>
+			<p class="emer_cnts">
+				서울시 홈페이지의 안정적 운영을 위한 시스템 작업으로 아래와 같이 서비스가 일시 중단됩니다. 이용에 불편을 드려 죄송합니다.
+			</p>
+			<p class="emer_date">중단일시 : '20.2.21(금) 18:00 ~ '20.2.22(토) 12:00 |  작업대상 : 서울시 홈페이지 전체 서비스</p>
+			<p class="emer_cnts" style="font-size: 12px;">* 정보시스템 정상가동은 2020.2.22(토) 09:00 이후 순차적으로 서비스 예정입니다.<br>* 일시중단 관련 문의는 서울시 120다산콜재단(☎120)으로 문의 하시기 바랍니다.</p>
+			<div class="emer_close" style="background: transparent;bottom: 16px;">
+				<button id="btn_habanner_close3" class="btn_close" style="width: 22px;height: 22px;" onclick="document.getElementById('div_emergency1').style.display='none';"><span class="sr-only">닫기</span></button>
+			</div>
+		</section>
+	</div>-->
+	<!-- 작업공지 레이어 박스 : End -->
+	
+	<!-- 	코로나 바이러스 상단 바 하드코딩 20200205 -->
+	
+		
+	
+
+
+
+<script>
+
+	function fnMainSubHitClick(P_TYPE, P_SEQ){
+		
+		var param 	= {'P_TYPE':P_TYPE, 'P_SEQ':P_SEQ};
+		
+		com.ajax({
+			type		: "POST"
+			,url		: "/seoul/hitcount.do"
+			,data		: param
+			,success: function(sdata){
+				return;
+			}
+			,error	: function(edata){
+				return;
+			}
+		});				
+		
+		if(P_TYPE=='seoulplay'){
+			action_logging({'tr_code':'skin'}); 
+		}
+	}
+
+
+	// 핫이슈 - 배너 쿠키 처리
+	var isHaTopBanner	= '';
+	
+	if(!(isHaTopBanner)){
+		
+		$.removeCookie('isHaTopBanner_close');
+		$.removeCookie('isHaTopBanner_time');
+		
+	} else {
+		
+		var topHaBanner_chk 	= $.cookie('isHaTopBanner_close');
+		var topHaBanner_time 	= $.cookie('isHaTopBanner_time');
+		
+		if((topHaBanner_chk) && topHaBanner_chk=='Y'){
+			
+			var now = com.dateUtil.getStringToDate({
+				'cdate'	: (new Date()),
+				'tyep'	: '24',
+				'mask'	: 'YYYYMMDDHHMISS'
+			})
+			
+			if(Number(topHaBanner_time) < Number(now)){
+				$.removeCookie('isHaTopBanner_close');
+				$.removeCookie('isHaTopBanner_time');
+				$('#div_hotissue_anne').show();
+			} else {
+				$('#div_hotissue_anne').hide();
+			}
+		}
+		
+		$('#btn_habanner_close').click(function(e) {
+			
+			if($('#notoday2').prop('checked')){
+				var today = com.dateUtil.getStringAddDate({
+					'cdate'	: (new Date()),
+					'type'	: '24',
+					'addDay': 1,
+					'mask'	: 'YYYYMMDDHHMISS'
+				})
+
+				$.cookie('isHaTopBanner_close', 	'Y');
+				$.cookie('isHaTopBanner_time', 		today['eDate']);
+			}
+			$('#div_hotissue_anne').hide();
+			$('#div_storyins').show();
+		});		
+	}	
+	
+	// 스토리인서울 - 배너 쿠키 처리
+	var isSiTopBanner	= '';
+	
+	var showSiTop = function(){
+		
+		var topSiBanner_chk 	= $.cookie('isSiTopBanner_close');
+		var topSiBanner_time 	= $.cookie('isSiTopBanner_time');
+		
+		if((topSiBanner_chk) && topSiBanner_chk=='Y'){
+			
+			var now = com.dateUtil.getStringToDate({
+				'cdate'	: (new Date()),
+				'tyep'	: '24',
+				'mask'	: 'YYYYMMDDHHMISS'
+			})
+			
+			if(Number(topSiBanner_time) < Number(now)){
+				$.removeCookie('isSiTopBanner_close');
+				$.removeCookie('isSiTopBanner_time');
+				$('#div_storyins').show();
+			} else {
+				$('#div_storyins').hide();
+			}
+		}
+	}
+	
+	if(!(isSiTopBanner)){
+		
+		$.removeCookie('isSiTopBanner_close');
+		$.removeCookie('isSiTopBanner_time');
+		
+	} else {
+		
+		showSiTop();
+		
+		$('#btn_sibanner_close').click(function(e) {
+			
+			if($('#notoday1').prop('checked')){
+				var today = com.dateUtil.getStringAddDate({
+					'cdate'	: (new Date()),
+					'type'	: '24',
+					'addDay': 1,
+					'mask'	: 'YYYYMMDDHHMISS'
+				})
+
+				$.cookie('isSiTopBanner_close', 	'Y');
+				$.cookie('isSiTopBanner_time', 		today['eDate']);
+			}
+			/*
+			$('#div_storyins').hide({
+				effect : "slide",
+				direction : "up",
+				duration : 200
+			});
+			*/
+			$('#div_storyins').slideUp();
+		});		
+	}
+	
+	var obj = $('#div_hotissue_anne').css('display');
+	if( !(obj) || obj == 'none' ){
+		if(isSiTopBanner){
+			showSiTop();
+		}
+	} else {
+		/* $('#div_storyins').hide('fast'); */
+		$('#div_storyins').hide();  /* 2019-03-06 닫힐때 애니메이션 제거 */
+	}
+	
+	
+	
+</script>
+
+    <!-- header -->
+    <header id="header">
+
+      <!-- ######################################################################## -->
+<!-- 
+	menu name: Pc Homepage Gnb
+--> 
+<!-- ######################################################################## -->
+
+
+
+
+
+
+
+
+<!-- PC homepage GNB 메인화면에서 action_logging처리 -->
+
+	<!-- 홈페이지 GNB  -->
+	<div class="top-area">
+		<div class="inner">
+			<h1 class="logo">
+				<a href="https://www.seoul.go.kr/"  onclick="action_logging({tr_code:'gnb_seoul'});" title="서울특별시 홈으로 이동"><span class="sr-only">서울특별시</span></a>
+			</h1>
+            <button class="btn_menu mo-view"><span class="sr-only">전체메뉴 열기</span></button>
+            <button class="btn_sch mo-view"><span class="sr-only">검색하기</span></button>
+			<div class="gnb">
+				<ul>
+					<li><a href="/realmnews/in/list.do"			onclick="action_logging({tr_code:'gnb_news'});" >서울소식</a></li>
+					<li><a href="/citizen/citizen.do"		 onclick="action_logging({tr_code:'top_menu05'});" >시민참여</a></li>
+					<li class="info_cate"><a href="https://news.seoul.go.kr"	target="_blank"  onclick="action_logging({tr_code:'gnb_more'});" >분야별정보</a>
+					<!-- <button type="button" title="분야별정보 열기" class="btn_info_cate">분야별정보</button> -->
+                       <!--분야별 정보 내용,스크립트 2018-07-23 추가 주미숙-->
+					   <!--
+                       <section id="info_detail" class="info_detail">
+                           <h2>분야별 정보</h2>
+                           <ul>
+                               <li class="house">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/citybuild/"	onclick="action_logging({tr_code:'gnb_more'});" >주택</a></p>
+                               </li>
+                               <li class="economy">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/economy/"		onclick="action_logging({tr_code:'gnb_more'});" >경제</a></p>
+                               </li>
+                               <li class="traffic">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/traffic/"		onclick="action_logging({tr_code:'gnb_more'});" >교통</a></p>
+                               </li>
+                               <li class="environment">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/env/"			onclick="action_logging({tr_code:'gnb_more'});" >환경</a></p>
+                               </li>
+                               <li class="welfare">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/welfare/"		onclick="action_logging({tr_code:'gnb_more'});" >복지</a></p>
+                               </li>
+                               <li class="safty">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/safe/"		 	onclick="action_logging({tr_code:'gnb_more'});" >안전</a></p>
+                               </li>
+                               <li class="culture">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/culture/"		onclick="action_logging({tr_code:'gnb_more'});" >문화</a></p>
+                               </li>
+                               <li class="work">
+                                   <p class="m_tit"><a target="_blank" href="http://news.seoul.go.kr/gov/"			onclick="action_logging({tr_code:'gnb_more'});" >행정</a></p>
+                               </li>
+                           </ul>
+                           <p class="view_all"><a href="/service/all.do">서비스 전체보기</a></p>
+                           <button class="btn_close"><span class="sr-only">닫기</span></button>
+                       </section>
+					   -->
+					</li>
+					<li><a href="/seoul/seoul.do"			 onclick="action_logging({tr_code:'top_menu04'});" >서울소개</a></li>
+					<li><a href="//org.seoul.go.kr"	 onclick="action_logging({tr_code:'top_menu06'});" >부서안내</a></li>
+					<li><a href="//opengov.seoul.go.kr"   	onclick="action_logging({tr_code:'gnb_opnegov'});" target="_blank" title="새창열림">정보공개</a></li>
+					<li><a href="//eungdapso.seoul.go.kr"  onclick="action_logging({tr_code:'gnb_eungdapso'});" target="_blank" title="새창열림">응답소</a></li>
+					
+				</ul>
+				<ul class="other">
+					<li id="li_loginIn"><a href="/member/userlogin/loginCheck.do" onclick="action_logging({tr_code:'top_menu01'});" >로그인</a></li>
+					<li id="li_loginOut" style="display:none" ><a href="/member/userlogin/logOut.do" onclick="action_logging({tr_code:'top_menu01'});" >로그아웃</a></li>
+					<li><a href="/member/info/mySeoul.do"	 onclick="action_logging({tr_code:'top_menu02'});" >나의서울</a></li>
+					 
+					<li><a href="javascript:void(0)" 		 onclick="checkMailUserYn(); return false;" title="새창열림">전자우편</a></li>
+					<!-- <li><a href="/helper/siteMap.do">사이트맵</a></li> -->
+				</ul>
+				<input type="hidden" id="seoulEmailDelyn" value="">
+				<input type="hidden" id="mPk" value="">
+				<input type="hidden" id="islogin" value="">
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	//IE오류 방지를 위함. 2019/11/15 추가
+	var console = window.console || { log:function(){} };
+
+	var openNewWindow;
+	
+	function myCallback(data){
+				if(data.success == "true"){
+					$('#seoulEmailDelyn').val('N');
+					location.reload();
+					openNewWindow=window.open("about:blank");
+					openNewWindow.location.href="https://citizen.seoul.kr?tr_code=top_menu03";
+				}else {
+					alert("전자메일 생성중 에러가 발생했습니다. \r\n다시 시도해 주세요...");
+					return;
+				}
+			}
+	
+	function checkMailUserYn(){
+		var delYN= $('#seoulEmailDelyn').val(); 
+		var islogin=$('#islogin').val();
+		var pk = $('#mPk').val();
+		
+		action_logging({'tr_code':'top_menu03'});
+		
+		if(islogin == "Y"){
+			if(delYN=="Y"){
+				if(confirm("서울시 전자우편을 신규로 생성하시겠습니까?")){
+					$.ajax({
+						dataType   : "jsonp"
+     					,url		: "//www.seoul.go.kr/member/info/seoulMailUseUpdate.do"
+     					,data		: {"pk" : pk,
+			     					   "M00101_DEL_YN" : "N"
+     					}
+     					,jsonpCallback: "myCallback"
+     					,error	: function(edata){
+     	    		    	alert("전자메일 생성중 에러가 발생했습니다. \r\n다시 시도해 주세요......");
+     	    		    	return;
+     					}				
+     				}); 
+				}else{
+					return;
+				}
+			}else if(delYN=="N"){
+				openNewWindow=window.open("about:blank");
+				openNewWindow.location.href="https://citizen.seoul.kr?tr_code=top_menu03";
+			}else {
+				alert("해당 쿠키가 존재하지 않습니다. 로그아웃 후 재 로그인 해주세요.");
+ 		    	return;
+			}	
+		}else{
+			openNewWindow=window.open("about:blank");
+			openNewWindow.location.href="//www.seoul.go.kr/member/userlogin/loginCheck.do?SITE_GB=GB002&refresh_url=https://citizen.seoul.kr";
+		}
+	}
+	
+		// 팝업창에서 탭클릭시 팝업 내에서만 탭 포커싱 이동되게..
+		var btnCategory = $('.info_cate > button');
+		var layerCategory = $('.info_detail');
+		front.btnClick(btnCategory, function($this) {
+			front.showCallback(layerCategory, function() {
+				layerCategory.addClass('on');
+				var closeBtn = layerCategory.find('.btn_close');
+				front.layerFocus(layerCategory, closeBtn);
+				
+				front.btnClick(closeBtn, function() {
+					front.hideCallback(layerCategory, function() {
+						$this.attr('tabindex', '0').focus();
+					});
+				});
+			});
+		});
+
+		
+		//오픈 클릭, click() 메서드 안에 익명 함수를 사용
+		$('.btn_menu').click(function(e){
+		    //기본 동작 취소, form action, a href 등등
+		    e.preventDefault();
+				$('#skip, .logo, .btn_menu, .btn_sch, #container, #footer').attr('aria-hidden',  true); //2020-08-12 앱접근성 실태조사 수정
+		    //클래스 추가		
+		    $('.gnb').addClass('on');
+		    $('.dim').addClass('on');
+			$('.txt_login>a').focus();		
+		});
+		
+		//닫기
+		$('.gnb .btn_close').click(function(e){
+		    e.preventDefault();
+				$('#skip, .logo, .btn_menu, .btn_sch, #container, #footer').attr('aria-hidden',  false); //2020-08-12 앱접근성 실태조사 수정
+		    //닫기
+		    $('.gnb').removeClass('on');
+		    $('.dim').removeClass('on');
+			$('.btn_menu').focus();
+		});
+		
+		// get login
+		function fnGetLogin(){
+		 	com.ajax({
+		 		type		: "POST"
+		 		,url		: "/seoulcom/isLogin.do"
+		 		,data		: {}
+		 		,success: function(sdata){
+		 			if(sdata.isOk=='Y'){//로그인 되어있을때
+		 				$('#li_loginIn').hide();
+		 				$('#li_loginOut').show();
+		 				//console.log(sdata.idelYn);
+		 				//console.log(sdata.pk);
+		 				$('#seoulEmailDelyn').val(sdata.idelYn);
+		 				$('#mPk').val(sdata.pk);
+		 				$('#islogin').val("Y");
+		 			} else {
+		 				$('#li_loginIn').show();
+		 				$('#li_loginOut').hide();
+		 			}
+		 		}
+		 		,error	: function(edata){
+	 				$('#li_loginIn').show();
+	 				$('#li_loginOut').hide();
+		 		}
+		 	});			
+		} 	
+		fnGetLogin();
+		
+	</script>	
+	
+
+
+<!-- SUB화면 GNB  -->
+
+
+
+
+
+
+      <!-- ######################################################################## -->
+<!--
+  menu name: Pc Homepage Header
+-->
+<!-- ######################################################################## -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- pc 대표홈페이지  -->
+
+
+  <div class="search-line">
+    <div class="inner">
+      <h1>
+        <a href="https://www.seoul.go.kr/" onclick="action_logging({tr_code:'seoul_bi'});" ><span class="sr-only">I SEOUL U</span></a>
+        
+      </h1>
+      <div class="search">
+        <form id="fm_TopSearch" target="_self" method="post" accept-charset="utf-8">
+          <input name="tr_code" id="tr_code" type="hidden" value="search">
+          <label for="inp_TopSearch" class="sr-only">검색</label>
+          <input type="text" id="inp_TopSearch" name="kwd" placeholder="검색어를 입력해 주세요" style="ime-mode:active;" onclick="action_logging({tr_code:'search'});">
+
+          <button id="btn_TopSearch" type="button" class="btn btn-search" onclick="action_logging({_se_m6:'검색하기'});" >
+            <span class="sr-only">검색하기</span>
+          </button>
+        </form>
+      </div>
+      <input type="text" id="eng_text" title="eng_text" readonly style="display:none">
+      <div class="lang_site">
+        <label for="cityLang" class="sr-only">언어 선택</label>
+        <select id="cityLang" name="cityLang">
+          <option value="http://english.seoul.go.kr/?SSid=101_01"    onclick="action_logging({tr_code:'foreign'});" >ENGLISH</option>
+          <option value="http://japanese.seoul.go.kr/?SSid=101_02"  onclick="action_logging({tr_code:'foreign'});" >日本語</option>
+          <option value="http://chinese.seoul.go.kr/?SSid=101_04"    onclick="action_logging({tr_code:'foreign'});" >简体中文</option>
+          <option value="http://tchinese.seoul.go.kr/?SSid=101_03"  onclick="action_logging({tr_code:'foreign'});" >繁体中文</option>
+          <option value="http://french.seoul.go.kr"           onclick="action_logging({tr_code:'foreign'});" >français</option>
+          <option value="http://spanish.seoul.go.kr"           onclick="action_logging({tr_code:'foreign'});" >español</option>
+        </select>
+        <input id="inp_cityLang" type="button" value="GO" title="서울시 다국어 홈페이지로 이동-새창" class="select_btn">
+      </div>
+      <!-- 날씨 영역-->
+      <div class="info_weather">
+
+								<!--날씨영역 위에 뜨는 레이어 팝업 추가 2018-07-23 추가 주미숙-->
+                <section id="sec_warn" class="layer_div02 layer_alert layer_warn_cold" style="display:none" >
+									
+										<h2 class="sr-only">기상특보</h2>
+									
+									
+                </section>
+                <p id="sec_temp_1" class="ico_area">
+
+          
+
+          
+            
+            
+            
+            
+          
+          
+          
+          
+          
+                </p>
+                <div id="sec_temp_2" class="txt_area">
+                    <p>
+                      <a href="http://www.kma.go.kr/aboutkma/intro/metropolitan/index.jsp?pointCode=1114055000" target="_blank" title="새창으로 이동" onclick="action_logging({tr_code:'weather'});" >
+                        
+                          <strong class="deg">18.7℃</strong>
+                        
+                        <span class="w_txt1">서울시&nbsp;
+                
+                  
+                  
+                  
+                  
+                
+                
+                
+                
+                
+                        </span>
+                      </a>
+                    </p>
+                    <p>
+            
+
+                      <a href="//cleanair.seoul.go.kr/main.htm#tab1_01" target="_blank" title="새창으로 이동"  onclick="action_logging({tr_code:'weather'});" >
+                        <span class="w_txt2">
+                          
+                            미세먼지(좋음)&nbsp;
+                          
+                          
+                            초미세먼지(좋음)
+                          
+                        </span>
+                      </a>
+                    </p>
+                </div>
+
+                
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $('#inp_cityLang').click(function(e){
+      var url = $("#cityLang").val();
+      window.open(url,'language','');
+    });
+
+    // get html5 location
+    function fnGetGeoLocation(callback){
+
+      if(!(navigator.geolocation)){
+        console.log('[geoLocation] 브라우저에서 HTML5 Geolocation을 지원하지 않습니다. !');
+        callback(null);
+      }
+
+      navigator.geolocation.getCurrentPosition(
+          function(position){
+            /* 서울시청 => 위도:Latitude:37.5666103 , 경도:Longitude:126.9783882  */
+            var y = position.coords['latitude'];
+            var x = position.coords['longitude'];
+            console.log('[geoLocation] 브라우저에서 위치정보 : y_latitude:' + y + ' / x_longitude:' + x);
+            callback({'y_lat':y, 'x_long':x});
+          },
+          function(err){
+            var str = "";
+            switch(err.code){
+              case err.PERMISSION_DENTED: str = "사용자 거부"; break;
+              case err.PERMISSION_UNAVAILABLE: str = "지리정보를 얻을 수 없음"; break;
+              case err.TIMEOUT: str = "시간초과"; break;
+              case err.UNKNOWN_ERROR: str = "사용자 거부"; break;
+            }
+            console.log('[geoLocation info] 브라우저에서 위치정보 획득 실패 :' + str);
+            callback(null);
+          },
+          {
+            enableHighAccuracy: false,
+            maximumAge: 0,
+            timeout: Infinity
+          }
+      );
+    }
+
+    // create Weather Html
+    function fnCreateWeather(data){
+
+      // 온도, 날씨, 미세먼지등
+      var html     = '';
+
+      var pty      = data['weather_temp']['PTY'];
+      var sky      = data['weather_temp']['SKY'];
+      var t1h      = data['weather_temp']['T1H'];
+      var pm10    = data['weather_temp']['PM10'];
+      var pm10_value  = data['weather_temp']['PM10_VALUE'];
+      var pm25    = data['weather_temp']['PM25'];
+      var pm25_value  = data['weather_temp']['PM25_VALUE'];
+      var guname    = data['weather_temp']['guname'];
+
+      var w_log    = ' onclick="action_logging({tr_code:' + "'weather'" + '});" ';
+
+      var a_temp_s   = '<a href="http://www.kma.go.kr/aboutkma/intro/metropolitan/index.jsp?pointCode=1114055000" target="_blank" title="새창으로 이동" ' + w_log + ' >';
+      var a_temp_e   = '</a>';
+
+      if(pty=='0.0'){
+        if(sky=='1.0'){
+          html += a_temp_s;
+          html += '<img src="/res_newseoul/images/weather/weathericon_new_d0.png" alt="맑음">';
+          html += a_temp_e;
+        }else if(sky=='2.0'){
+          html += a_temp_s;
+          html += '<img src="/res_newseoul/images/weather/weathericon_new_d1.png" alt="구름조금">';
+          html += a_temp_e;
+        }else if(sky=='3.0'){
+          html += a_temp_s;
+          html += '<img src="/res_newseoul/images/weather/weathericon_new_d2.png" alt="구름많음">';
+          html += a_temp_e;
+        }else if(sky=='4.0'){
+          html += a_temp_s;
+          html += '<img src="/res_newseoul/images/weather/weathericon_new_d6.png" alt="흐림">';
+          html += a_temp_e;
+        }
+      }else if(pty=='1.0'){
+        html += a_temp_s;
+        html += '<img src="/res_newseoul/images/weather/weathericon_new_d3.png" alt="비">';
+        html += a_temp_e;
+      }else if(pty=='2.0'){
+        html += a_temp_s;
+        html += '<img src="/res_newseoul/images/weather/weathericon_new_d4.png" alt="비/눈">';
+        html += a_temp_e;
+      }else if(pty=='3.0'){
+        html += a_temp_s;
+        html += '<img src="/res_newseoul/images/weather/weathericon_new_d5.png" alt="눈">';
+        html += a_temp_e;
+      }else if(pty=='4.0'){
+        html += a_temp_s;
+        html += '<img src="/res_newseoul/images/weather/weathericon_new_d3.png" alt="소나기">';
+        html += a_temp_e;
+      }
+
+      $('#sec_temp_1').html('').html(html)
+
+      html = '';
+      html += '<p>';
+      html += '<a href="http://www.kma.go.kr/aboutkma/intro/metropolitan/index.jsp?pointCode=1114055000" target="_blank" title="새창으로 이동" ' + w_log + ' >';
+      html += '<strong class="deg">' + t1h + '℃</strong>';
+      html += '<span class="w_txt1">' + guname + ' ';
+      if(pty=='0.0'){
+        if(sky=='1.0'){
+          html += '맑음';
+        }else if(sky=='2.0'){
+          html += '구름조금';
+        }else if(sky=='3.0'){
+          html += '구름많음';
+        }else if(sky=='4.0'){
+          html += '흐림';
+        }
+      }else if(pty=='1.0'){
+        html += '비';
+      }else if(pty=='2.0'){
+        html += '비/눈';
+      }else if(pty=='3.0'){
+        html += '눈';
+      }else if(pty=='4.0'){
+        html += '소나기';
+      }
+      html += '</span>';
+      html += '</a>';
+      html += '</p>';
+      html += '<p>';
+      html += '<a href="//cleanair.seoul.go.kr/main.htm#tab1_01" target="_blank" title="새창으로 이동" ' + w_log + ' >';
+      html += '<span class="w_txt2">';
+      html += (pm10_value) ? pm10_value + ' ' : '';
+      html += (pm25_value) ? pm25_value : '';
+      html += '</span>';
+      html += '</a>';
+      html += '</p>';
+
+      $('#sec_temp_2').html('').html(html)
+
+      // 기상특보
+        if(!(data['weather_warn'])){
+          $('#sec_warn').hide();
+          return;
+        }
+
+        html       = '';
+      var title      = data['weather_warn']['TITLE'];
+      //var titleArr  = title.split('·');
+      var show_date  = data['weather_warn']['SHOW_DATE'];
+      var weather_cls = data['weather_warn']['weather_cls'];
+
+      html += '<h2 style="padding-top: 15px;">기상특보</h2>';
+      html += '<p class="tit">' + title + '</p>';
+          /* html += '<p class="date_area"><span>' + show_date + '</span></p>'; */
+          html += '<button id="btn_warn_close" class="btn_close"><span class="sr-only">닫기</span></button>';
+
+      $('#sec_warn').html('').html(html)
+      $('#sec_warn').addClass(weather_cls);
+        $('#sec_warn').show();
+
+      $('#btn_warn_close').click(function(){
+        $(this).closest(".layer_alert").slideUp(200);
+      });
+
+			$('#btn_warn_close').on('keydown', function(e){
+				if(e.keyCode == 9 && !e.shiftKey ){
+					$(this).closest(".layer_alert").slideUp(200);
+				}    
+			});
+
+
+    }
+
+    // get Weather
+    function fnCheckLocation(){
+
+      var getWeather = function(param){
+        com.ajax({
+          type    : "POST"
+          ,url    : "/weather/getTodayWeather.do"
+          ,data    : param
+          ,success: function(sdata){
+            fnCreateWeather(sdata);
+          }
+          ,error  : function(edata){
+            return;
+          }
+        });
+      }
+      fnGetGeoLocation(getWeather);
+    }
+
+    $(document).ready(function() {
+      fnCheckLocation();
+    });
+
+  </script>
+
+
+
+<!-- sub 화면  -->
+
+
+
+<script>
+
+  function fnTopSearch(){
+    var params = {
+        'tr_code'   : $('input[name=tr_code]').val(),
+        'kwd'    : $('input[name=kwd]').val()
+    }
+    var url = "https://newsearch.seoul.go.kr/ksearch/search.do";
+    com.submit('#fm_TopSearch', true, url);
+  }
+
+  $('#inp_TopSearch').keydown(function(key){
+    if(key.keyCode==13){
+      fnTopSearch();
+    }
+  });
+
+  $('#btn_TopSearch').click(function(e){
+    fnTopSearch();
+  });
+  
+  //교통상황
+  function fnTrafficService(){
+	  try{
+		  var trafficBanner = $(".traffic-banner");
+		  $(trafficBanner).find(".rt_slide").hide();
+		  $(trafficBanner).find(".rt-controls").hide();
+		  
+		  var cnt = 0;
+		  $.ajax({
+	          type    : "POST"
+	          ,url    : "/mseoulM/safe/traffic/getAccidentList.do"
+	          ,success: function(sdata){
+	            if(sdata.returnList){
+	            	
+	            	var data = sdata.returnList;
+	            	
+	            	for(var i=0; i < data.length; i++){
+	            		ACC_ID = data[i].ACC_ID;
+	            		ACC_TYPE = data[i].ACC_TYPE;
+	            		ACC_INFO = data[i].ACC_INFO;
+	            		ACC_TYPE = data[i].ACC_TYPE;
+	            		ACC_DTYPE_NAME = data[i].ACC_DTYPE_NAME;
+	            		
+	            		OCCR_DTIME = data[i].OCCR_DTIME;
+	            		ACC_ROAD_CODE = data[i].ACC_ROAD_CODE;	//전면통제, 부분통제
+	            		
+	            		
+	            		if(OCCR_DTIME != ""){
+	            			if(OCCR_DTIME.indexOf(".")){
+	            				OCCR_DTIME = OCCR_DTIME.substring(OCCR_DTIME.indexOf(".")+1);
+	            			}
+	            		}
+	            		EXP_CLR_DTIME = data[i].EXP_CLR_DTIME;
+	            		if(EXP_CLR_DTIME != ""){
+	            			if(EXP_CLR_DTIME.indexOf(".")){
+	            				EXP_CLR_DTIME = EXP_CLR_DTIME.substring(EXP_CLR_DTIME.indexOf(".")+1);
+	            			}
+	            		}
+	            		
+	            		//기상/화재만 노출
+	            		//if(ACC_TYPE == "A08" || ACC_TYPE == "A09"){
+	            			//$(trafficBanner).find(".rt_slide").append("<li><a href='https://topis.seoul.go.kr' target='_blank'><span class='type1'>부분통제</span><p class='title'>"+ACC_INFO+"</p><p class='date'>발생일시 "+OCCR_DTIME+"  완료예정 "+EXP_CLR_DTIME+"</p></a>");
+	            			if(ACC_ROAD_CODE == "009"){
+	            				$(trafficBanner).find(".rt_slide").append("<li><a href='https://topis.seoul.go.kr?accId="+ACC_ID+"' target='_blank' onclick=\"action_logging({'tr_code':'traffic'});\"><span class='icon-box'><img src='/res_newseoul/images/main/map/"+ACC_TYPE+".png' alt='"+ACC_DTYPE_NAME+"'></span><span class='type type1'>전면통제</span><p class='title'>"+ACC_INFO+"</p><p class='date'>발생일시  "+OCCR_DTIME+" &nbsp; 완료예정 "+EXP_CLR_DTIME+"</p></a></li>");
+	            			}else if(ACC_ROAD_CODE == "010"){
+	            				$(trafficBanner).find(".rt_slide").append("<li><a href='https://topis.seoul.go.kr?accId="+ACC_ID+"' target='_blank' onclick=\"action_logging({'tr_code':'traffic'});\"><span class='icon-box'><img src='/res_newseoul/images/main/map/"+ACC_TYPE+".png' alt='"+ACC_DTYPE_NAME+"'></span><span class='type'>부분통제</span><p class='title'>"+ACC_INFO+"</p><p class='date'>발생일시  "+OCCR_DTIME+" &nbsp; 완료예정 "+EXP_CLR_DTIME+"</p></a></li>");
+	            			}else{
+	            				$(trafficBanner).find(".rt_slide").append("<li><a href='https://topis.seoul.go.kr?accId="+ACC_ID+"' target='_blank' onclick=\"action_logging({'tr_code':'traffic'});\"><span class='icon-box'><img src='/res_newseoul/images/main/map/"+ACC_TYPE+".png' alt='"+ACC_DTYPE_NAME+"'></span><span class='type type2'>통제없음</span><p class='title'>"+ACC_INFO+"</p><p class='date'>발생일시  "+OCCR_DTIME+" &nbsp; 완료예정 "+EXP_CLR_DTIME+"</p></a></li>");
+	            			}
+	            			
+	            			cnt++;
+	            		//}
+	            	}
+	            	
+	            	if(cnt > 0){
+	            		$(trafficBanner).find(".rt_image").hide();
+	            		
+	            		$(trafficBanner).find(".rt-controls").show();
+            			$(trafficBanner).find(".rt_slide").show();
+	            	}else{
+	            		$(trafficBanner).find(".rt_image").show();
+	            	}
+	            	
+	            	fnTrafficRollring();
+	            }
+	          }
+	          ,error  : function(edata){
+	        	  $(trafficBanner).find(".rt_slide").hide();
+	              $(trafficBanner).find(".rt_image").show();
+	          }
+	        });
+		}catch(e){
+			$(trafficBanner).find(".rt_slide").hide();
+            $(trafficBanner).find(".rt_image").show();
+	  }
+  }
+  
+  function fnTrafficRollring(){
+	  var rt_total_count = $(".rt_slide > li").length;
+	  if(rt_total_count > 1){
+	    var rt_slide = $(".rt_slide").bxSlider({
+				mode: 'vertical',
+	      touchEnabled: false,
+	      auto : true,
+	      autoControls: false,
+	      infiniteLoop : true,
+	      pause : 5000,
+	      autoHover : true,
+	      pager : false,
+				//nextSelector : '.ico-next',
+	      //prevSelector : '.ico-prev',
+	      onSliderLoad : function(){
+	        //$(".ci_pagers > .total_count").text(ci_total_count);
+	        //$("#slide2").css('visibility', 'visible').animate({opacity: 1});
+	      },
+	      onSlideAfter : function($slideElement, oldIndex, newIndex) {
+	       // $(".ci_pagers > .index_count").text(newIndex+1);
+	      }
+	    });
+
+
+		  $(".ico-play").on("click",function(){
+	      $(this).css("display","none");
+	      $(".ico-stop").css("display","block").focus();
+	      rt_slide.startAuto();
+	    });
+	    $(".ico-stop").on("click",function(){
+	      $(this).css("display","none");
+	      $(".ico-play").css("display","block").focus();
+	      rt_slide.stopAuto();
+	    });
+
+			$(".ico-prev").on("click",function(){
+				rt_slide.goToPrevSlide();
+				$(this).focus();
+			});
+
+			$(".ico-next").on("click",function(){
+				rt_slide.goToNextSlide();
+				$(this).focus();
+			});
+
+			
+			$(".m_mayor_wrap .img a").on("keydown",function(e){
+
+				if(e.keyCode == 9 && !e.shiftKey ){
+					e.preventDefault();
+					rt_slide.reloadSlider({
+						mode : 'vertical',
+						auto : false,
+						infiniteLoop : false,
+						speed : 0,
+						controls : false,
+						autoControls : false,
+						autoHover : false,
+						pager : false,
+					});
+					setTimeout(function(){
+						$(".rt_slide > li:first-child > a").focus();
+					},200);
+					$('.rt-controls').css('display', 'none');
+				}
+			});
+
+
+		} else {
+			$(".ico-prev, .ico-next, .ico-play, .ico-stop").css('display', 'none');
+		}
+  }
+
+</script>
+
+
+
+
+
+    </header>
+    <!-- //header-->
+
+    <!-- inner_wrap -->
+    <div class="inner_wrap" id="inner_wrap">
+
+      <!-- inner1 -->
+      <!-- <div class="inner1"  style="position: relative;overflow: visible;"> -->
+      <div class="inner1">
+        <!-- 2020-05-18
+        <div class="layer_div01 layer_alert" style="z-index: 13;width: 780px;height: 360px;background: yellow;">
+          <img usemap="#his_gingub_map2" src="/res_newseoul/images/main/walkingtrough_pc_0514.jpg" alt="용산구 워크스루 선별진료소 운영">
+          <map name="his_gingub_map2">
+              <area target="_blank" shape="rect" coords="1,1,769,349" alt="용산구 워크스루 선별진료소 운영" href="http://www.seoul.go.kr/coronaV/coronaStatus.do?menu_code=03" >
+          </map>
+          <button class="btn_close"><span class="sr-only">닫기</span></button>
+        </div>
+        -->
+
+        <!-- <div class="slide" style="overflow: hidden;height: 350px"> -->
+        <div class="slide" >
+          <!-- 핫이슈 / 긴급레이어  -->
+              
+
+          <h2 class="sr-only">슬라이드 영역</h2>
+          <!-- 주요뉴스 -->
+          <div class="slide_content slide_content1">
+            <h3><a href="#slide1" class="on"><i class="ico_main ico_main_news"></i>주요뉴스<em class="sr-only">선택됨</em></a></h3>
+            <div class="hotissue_banner" id="slide1" style="visibility:hidden;opacity: 0">
+              <div class="hi_wrapper">
+                <ul class="hi_slide">
+                  
+                  
+                  <li>
+                    <a href="https://www.seoul.go.kr/coronaV/coronaStatus.do?menu_code=18" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3118');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/b82498fcaae8443da2fe6b13a2c172aa.jpg" alt="코로나19 맞춤형 긴급재난지원. 코로나19 긴급지원 제도와 예상 지원금을 확인하세요!" >
+                        <figcaption class="figcaption">코로나19 맞춤형 긴급재난지원</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1297239" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3149');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/f1ed1b97946e4e3b956164650f9c67e4.jpg" alt="무급휴직자 최대 100만원...서울시 &#39;1만개 일자리 대책&#39;" >
+                        <figcaption class="figcaption">무급휴직자 최대 100만원...서울시 '1만개 일자리 대책'</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1297080" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3150');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/37dc822e53b042d6b33917349e504e31.jpg" alt="보증금 30% 무이자 지원 &#39;장기안심주택&#39; 2,500명 모집" >
+                        <figcaption class="figcaption">보증금 30% 무이자 지원 '장기안심주택' 2,500명 모집</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1296365" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3131');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/931b44fec2474246ae4f20e95934e9e3.jpg" alt="고덕강일·마곡에 국민임대 1,009세대 공급…입주조건은" >
+                        <figcaption class="figcaption">고덕강일·마곡에 국민임대 1,009세대 공급…입주조건은</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1296240" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3130');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/4de6af1cab7d493d80b50be11fcdf517.jpg" alt="&#39;사장님 공공기관과 거래하세요&#39; 서울시 공공마켓 개설" >
+                        <figcaption class="figcaption">"사장님 공공기관과 거래하세요" 서울시 공공마켓 개설</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/gov/archives/514796" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3144');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/4dd5e9edd61a4c788d4a94675d813f17.jpg" alt="집회금지 서울시 코로나19 확산 방지를 위한 서울 전역 10인 이상 집회 10월 11일까지 전면 금지" >
+                        <figcaption class="figcaption">코로나19 확산 방지를 위한 서울 전역 10인 이상 집회 10월 11일까지 전면 금지</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="hi_control">
+                <div class="hi_pagers">
+                  <span class="index_count">1</span>/<span class="total_count">10</span>
+                </div>
+                <div class="btn_hi btn_hi_prev"></div>
+                <div class="hi_play">
+                  <a href="#n" class="btn_hi_start" title="슬라이드 시작">슬라이드 시작</a>
+                  <a href="#n" class="btn_hi_stop" title="슬라이드 정지">슬라이드 정지</a>
+                </div>
+                <div class="btn_hi btn_hi_next"></div>
+              </div>
+            </div>
+          </div>
+          <!-- // 주요뉴스 -->
+          <!-- 시민참여 -->
+          <div class="slide_content slide_content2">
+            <h3><a href="#slide2" ><i class="ico_main ico_main_citizen"></i>시민참여<em class="sr-only"></em></a></h3>
+            <div class="hotissue_banner" id="slide2" style="visibility:hidden;opacity: 0">
+              <div class="ci_wrapper">
+                <ul class="ci_slide">
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/gov/archives/515595" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3153');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/5757e5fe663a4af1a9dc515425f5bf24.jpg" alt="훈민정음 해례본 발견 80주년 기념 훈민정음 해례본 이야기 28 날짜: 2020.9.28 ~2020.10.18 장소: 서울도서관 외벽" >
+                        <figcaption class="figcaption">한글날 기념 훈민정음 해례본 이야기 전시 </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509725" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3151');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/c1951d1e4f3f4a97b7a43afc2d7d27dd.jpg" alt="서울시 코로나19 피해 50인 미만 기업체. 무급휴직 고용유지지원금 지원. 코로나19 집합금지 및 제한, 영업제한 등으로 무급휴직을 실시한 기업체 근로자에게 고용유지지원금을 지원합니다" >
+                        <figcaption class="figcaption">코로나19 집합금지 및 제한 기업체 등 무급휴직 고용유지지원금 지원</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/env/archives/508602" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3147');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/ccddb20676f448e79552516e82b3b7c0.png" alt="서울식물원 온라인 가을축제 &#39;식물원을 빌려드립니다&#39; 크리에이터 모집. 2020.9.29~10.11" >
+                        <figcaption class="figcaption">'식물원을 빌려드립니다' 크리에이터를 찾습니다!</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/welfare/archives/523337" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3148');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/e8c1dfd88d174ba88396e16192c74010.jpg" alt="뜨거운 외침, 성별임금격차에 대한 응답. &#39;서울시 성평등임금공시&#39; 모델 확산을 위한 토론회. 2020. 10. 8(목) 오후 2시, 유튜브(서울시, TBS채널) 실시간 중계" >
+                        <figcaption class="figcaption">'서울시 성평등임금공시' 모델 확산을 위한 토론회 개최</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/env/archives/508565" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3135');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/ebbcb58800dc43729ff98ff6fa8c480c.jpg" alt="2020 서울시 녹색중소기업 녹색제품 온라인 기획전 G마켓(국내), EC21(국외) &#39;20.10.5.(월) ~ 10.25.(일) / 3주" >
+                        <figcaption class="figcaption">2020 서울시 녹색중소기업 "녹색제품 온라인 기획전"</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/citybuild/archives/510063" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3143');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/a99b274babcf4879b89d6f65d6df0266.jpg" alt="2020.10.05.(월) - 10.18.(일) 총 5,500만원 지원! 세원상가군 시제품 제작 지원사업 2020 세운메이드 세운메이드란? 세운·청계로·을지로의 도심제조업 활성화를 위한 시제품 제작지원 프로젝트입니다. 문의 02-2273-5515 세운 지원센터" >
+                        <figcaption class="figcaption">2020 세운메이드</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/culture/archives/508406" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3141');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/06e2d45e7ea340d7bd1f1a30393f51f5.jpg" alt="서울디자인창업센터 2기 입주기업 모집 서울디자인재단이 청년창업을 지원합니다" >
+                        <figcaption class="figcaption">서울디자인창업센터 2기 입주기업 모집</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515406" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3140');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/a2d94bcbe1f4468d80da4c135f3c618a.jpg" alt="2020 민주주의 서울 유튜브 영상 공모전 민서야 보고싶어! 9.28.(월) ~ 11.4(수) 18:00 마감 민주주의 서울(민서)이란? 시민이 스스로 일상의 문제를 제안하고 서울시와 함께 토론해서 정책을 만들어가는 서울시의 대표 시민참여 플랫폼입니다." >
+                        <figcaption class="figcaption">2020 민주주의 서울 유튜브 영상 공모전(민서야 보고싶어!)</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/gov/archives/515385" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3138');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/9aadb4a5a56c42dfb494a134322646c6.jpg" alt="2020년도 행정사무감사 대비 시민제보를 받습니다! 서울시정 및 교육행정 전반에 걸쳐 위법, 부당한거나 개선이 필요하다고 느끼신 사항을 제보하여 주시면 행정사무감사에 적극 반영하도록 하겠습니다. 제보기간 : 2020. 9. 25(금) ~ 10. 24(토), 참여방법 : 서울특별시의회 홈페이지 공지사항 참조, 문의 : 02) 2180-7882 바로가기" >
+                        <figcaption class="figcaption">2020년도 행정사무감사 대비 시민제보를 받습니다!</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509595" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3136');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/0aeda044cc2b4a01b22f61dd7632c2b8.jpg" alt="STARTUP 서울캠퍼스타운! 유튜브를 점령하라! 모집기간 : 2020.9.25(금)~ 2020.10.30(금)까지" >
+                        <figcaption class="figcaption">캠퍼스타운 창업 홍보영상 유튜브 조회수 경쟁대회</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/culture/archives/508414" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3133');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/4ac123c6fc184890a4260a998a8497a8.jpg" alt="2020 서울관광대상 서울관광 발전에 기여한 공로자들을 찾습니다." >
+                        <figcaption class="figcaption">2020 서울관광대상 수상자 모집</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515214" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3132');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/fda3d8f73f314300a5cf988447e90504.jpg" alt="코로나19로 인한 돌봄 서비스 공백해소를 위해 우리동네키움센터는 어떻게 변화해야 할까요? 서울시가 묻습니다. 2020년 9월22일~10월21일" >
+                        <figcaption class="figcaption">코로나19로 인한 돌봄 서비스 공백해소를 위해 우리동네키움센터는 어떻게 변화해야 할까요?</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509333" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3117');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/512e4b2e616a47cf8d947347246fc1f8.png" alt="청정지역 프로젝트 시즌2 청년 참여자 추가모집 9.15(화) ~ 10.8(목) 18:00 공식홈페이지 접수 www.youthstay2.org #지역에서 #만나는 #새로운 나" >
+                        <figcaption class="figcaption">청정지역 프로젝트 시즌2 참여청년 추가모집</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/gov/?p=515055&preview=true" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3108');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/d3e822f2aa454a00a50e3e4abf5c00bc.jpg" alt="2020 서울서베이 실시 본 조사 9월 14일 ~ 10월 13일 보완 조사 10월 14일 ~ 10월 31일" >
+                        <figcaption class="figcaption">2020 서울서베이 실시 안내</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509180#scrap" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3107');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/6fb2b6320ee145d7bb674b252ff7fdd8.jpg" alt="국내최초 산업단지 舊구로공단의 산업유산을 구입합니다 G밸리 산업관(가칭) 자료구입 3차 접수기간 2020년 9월 10일(목) ~ 10월 7일(수) 구입대상 舊구로공단 조성·발전 자료 및 경제개발계획 자료, 산업제품/기기류, 근로자·기업인 기록류 등" >
+                        <figcaption class="figcaption">(舊)구로공단 역사 자료를 구입합니다. </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/514570" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3062');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/798771d4f57846409c8114bbdb14ba2d.png" alt="청년 금융 자립을 위한 청년 미래투자 금융지원 &#39;서울청년 징검다리 대출&#39; 기간 : 8.18(화)~예산 소진시까지. 2, 3금융 대출 보유한 서울청년이라면 필독" >
+                        <figcaption class="figcaption">청년 미래투자 금융지원 서울청년 징검다리 대출</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/welfare/archives/523031" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3137');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/8c24818a080440ed87c9ace8c8943efa.jpg" alt="성평등한 집콕 명절 보내고 제로페이 받자! 이벤트1. 성평등한 집콕 명절 &#39;함께 맞혀요!&#39; 이벤트2. 성평등한 집콕 명절 &#39;함께 찍어요!&#39; 이벤트 기간 | 2020.09.28 - 20.10.11 당첨자 발표 | 2020.10.16 참여하기" >
+                        <figcaption class="figcaption">서울시 성평등한 집콕명절 시민참여 캠페인</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515259" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3139');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/6d198ec522154ed588f4175d961438da.png" alt="2020 서울청년학회 젊은 연구활동가 교류의 장.  언제 2020년 10월 15일(목) ~ 17일(토) 어디서 유튜브 생중계, 줌 화상회의 등 신청 http://bit.ly/2020youthcon " >
+                        <figcaption class="figcaption">2020 서울청년학회 개최 안내 </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="ci_control">
+                <div class="ci_pagers">
+                  <span class="index_count">1</span>/<span class="total_count">10</span>
+                </div>
+                <div class="btn_ci btn_ci_prev"></div>
+                <div class="ci_play">
+                  <a href="#n" class="btn_ci_start" title="슬라이드 시작">슬라이드 시작</a>
+                  <a href="#n" class="btn_ci_stop" title="슬라이드 정지">슬라이드 정지</a>
+                </div>
+                <div class="btn_ci btn_ci_next"></div>
+              </div>
+            </div>
+          </div>
+          <!-- // 시민참여 -->
+        </div>
+
+        <!-- 코로나 현황 -->
+        <div class="m_mayor_wrap s_banner_wrap side_banner_new">
+					 <figure class="img">
+						<a href="//www.seoul.go.kr/coronaV/coronaStatus.do" target="_blank" onclick="action_logging({'tr_code':'corona'});">
+							<span class="sr-only">코로나19 현황. 발생동향 전체보기</span> <!--  교통정보 없을 때 -->
+						 <!-- <img src="/res_newseoul/images/main/bg_corona_pc_0810.jpg" alt="코로나19 현황. 발생동향 전체보기" > 교통정보 있을 때 -->
+						 <!-- <img src="/res_newseoul/images/main/bg_corona_pc_0826.jpg" alt="코로나19 현황. 발생동향 전체보기" > 교통정보 + 배너 -->
+							<div class="input-lists">
+							 <span class="result0"><em class="sr-only">날짜 기준 : </em>'20.10.06.00시 기준</span>   <!-- 수정 날짜기준 -->
+								<span class="result1 result1"><em class="sr-only">서울시 확진자 : </em>5,410</span>        <!-- 확진자 서울시 -->
+								<span class="result2 result2-1"><em class="sr-only">서울시 추가 확진자 : </em>15</span>      <!-- 추가확진자 총합 -->
+								<span class="result3 result3-1"><em class="sr-only">서울시 퇴원 : </em>4,584</span>        <!--퇴원 서울시 -->
+								<span class="result3 result3-2"><em class="sr-only">서울시 추가 퇴원 : </em>109</span>      <!--추가퇴원 서울시-->
+								<span class="result4 result4"><em class="sr-only">서울시 사망 : </em>61</span>            <!--사망 서울시 -->
+							</div>
+						</a>
+					</figure>
+
+					<div class="traffic-banner">
+						<h2 class="sr-only">서울시 실시간 교통정보</h2>
+						<div class="rolling-traffic">
+							
+							<ul class="rt_slide">
+																			
+							</ul>
+							<div class="rt-controls" style="display:none">
+								<div class="rt-play">
+									<button type="button" class="ico-prev">이전</button>
+									<button type="button" class="ico-stop">정지</button>
+									<button type="button" class="ico-play">재생</button>
+									<button type="button" class="ico-next">다음</button>
+								</div>
+							</div>
+							
+							<div class="rt_image" style="display:none">
+								<a href="https://topis.seoul.go.kr" target="_blank" onclick="action_logging({'tr_code':'traffic'});">
+									<img src="/res_newseoul/images/main/banner_traffic_0810.jpg" alt="서울시 실시간 교통정보 안내 바로가기">
+									<!-- <img src="/res_newseoul/images/main/banner_traffic_0826.jpg" alt="서울시 실시간 교통정보 안내 바로가기">	교통정보 + 배너  -->
+								</a>
+							</div>
+							
+						</div>						
+					</div>
+
+					<!-- 태풍 배너 2020-08-27 -->
+					<!--
+					<div class="typhoon-banner">
+						<a href="https://safecity.seoul.go.kr/disst/typhnIndex.do" target="_blank"><img src="/res_newseoul/images/main/banner_typhoon_0826.jpg" alt="태풍 속보 안내 바로가기"></a>
+					</div>
+					-->
+	      
+	      
+        </div>
+        <!-- //코로나 현황 -->
+      </div>
+      <!-- //inner1-->
+
+      <!-- 기존의 홈페이지관리 주요서비스는 사용하지 않음  -->
+      <section class="inner2">
+        <h2>주요 서비스</h2>
+        <div class="m_service">
+              <ul>
+                        <li class="answer">
+                            <a href="//eungdapso.seoul.go.kr" onclick="action_logging({tr_code:'service01'});" target="_blank" title="새창"><i class="ico_service"></i>응답소(민원신고)</a>
+                        </li>
+             <!-- <li class="gwang">
+                            <a href="https://gwanghwamun.seoul.go.kr/" onclick="action_logging({tr_code:'service11'});" target="_blank" title="새창"><i class="ico_service"></i>광화문광장</a>
+                        </li> -->
+             <li class="democracy">
+                            <a href="https://democracy.seoul.go.kr" onclick="action_logging({tr_code:'service12'});" target="_blank" title="새창"><i class="ico_service"></i>민주주의서울</a>
+                        </li>
+                        <li class="job">
+                            <a href="http://job.seoul.go.kr" onclick="action_logging({tr_code:'service02'});" target="_blank" title="새창"><i class="ico_service"></i>서울일자리</a>
+                        </li>
+                        <li class="portal">
+                            <a href="http://sll.seoul.go.kr" onclick="action_logging({tr_code:'service03'});" target="_blank" title="새창"><i class="ico_service"></i>평생학습포털</a>
+                        </li>
+            <!-- <li class="house">
+                                        <a href="http://housing.seoul.go.kr/" onclick="action_logging({tr_code:'service04'});" target="_blank" title="새창"><i class="ico_service"></i>서울주거포털</a>
+                                    </li> -->
+                        <!-- <li class="care">
+                            <a href="http://iseoul.seoul.go.kr" onclick="action_logging({tr_code:'service04'});" target="_blank" title="새창"><i class="ico_service"></i>보육포털</a>
+                        </li> -->
+            <li class="icare">
+                            <a href="https://icare.seoul.go.kr/" onclick="action_logging({tr_code:'service16'});" target="_blank" title="새창"><i class="ico_service"></i>우리동네키움포털</a>
+                        </li>
+                        <li class="realestate">
+                            <a href="http://land.seoul.go.kr" onclick="action_logging({tr_code:'service05'});" target="_blank" title="새창"><i class="ico_service"></i>부동산정보</a>
+                        </li>
+                        <li class="public">
+                            <a href="//yeyak.seoul.go.kr" onclick="action_logging({tr_code:'service07'});" target="_blank" title="새창"><i class="ico_service"></i>공공서비스예약</a>
+                        </li>
+												<!--
+                        <li class="tour">
+                            <a href="http://korean.visitseoul.net" onclick="action_logging({tr_code:'service08'});" target="_blank" title="새창"><i class="ico_service"></i>서울관광</a>
+                        </li>
+												-->
+												<li class="welfare">
+                            <a href="http://wis.seoul.go.kr" onclick="action_logging({tr_code:'service18'});" target="_blank" title="새창"><i class="ico_service"></i>서울복지포털</a>
+                        </li>
+												<!--
+                        <li class="park">
+                            <a href="http://parks.seoul.go.kr" onclick="action_logging({tr_code:'service09'});" target="_blank" title="새창"><i class="ico_service"></i>서울의공원</a>
+                        </li>
+												-->
+                        <li class="house">
+                            <a href="//housing.seoul.go.kr/" onclick="action_logging({tr_code:'service15'});" target="_blank" title="새창"><i class="ico_service"></i>서울주거포털</a>
+                        </li>
+												<li class="manifesto">
+                            <a href="http://mayor.seoul.go.kr/app/seoul/manifesto_intro.do" onclick="action_logging({tr_code:'service17'});" target="_blank" title="새창"><i class="ico_service"></i>공약&amp;매니페스토</a>
+                        </li>
+												<li class="council">
+                            <a href="http://www.smc.seoul.kr" onclick="action_logging({tr_code:'service10'});" target="_blank" title="새창"><i class="ico_service"></i>시의회</a>
+                        </li>
+            <!--
+            <li class="nuri">
+                            <a href="http://safecity.seoul.go.kr" onclick="action_logging({tr_code:'service06'});" target="_blank" title="새창"><i class="ico_service"></i>서울안전누리</a>
+                        </li>
+
+            -->
+												
+              </ul>
+                    <a href="//news.seoul.go.kr/gov/site" class="btn_asite" onclick="action_logging({tr_code:'service_site'});" target="_blank" title="새창">전체사이트</a>
+          </div>
+        <!--// .m_service1 -->
+      </section>
+
+    </div>
+    <!--// .innner-wrap -->
+  
+    <!-- 사이드 배너 -->
+    <div class="inner3-wrap">
+      <div class="inner3">
+        <h2 class="sr-only">텍스트 배너</h2>
+        <ul>
+      <!-- 이미지배너  -->
+          
+        
+            
+          <li><a href="http://mediahub.seoul.go.kr/corona19/index.php?scstop=support" onclick="fnMainHitClick('sidebanner1','36');"><img src="/upload/imgBanner/IMGBANNER_20200414113349_25889.jpg" alt="한눈에 보는 코로나19 생활경제 지원 정책"></a></li>
+          
+                   
+          
+                 
+          
+        
+            
+                   
+          <li><a href="http://news.seoul.go.kr/welfare/archives/512553" onclick="fnMainHitClick('sidebanner2','25');"><img src="/upload/imgBanner/IMGBANNER_20200306164810_16746.jpg" alt="코로나19 서울시 관련 선별진료소 현황(이동식 선별진료소 포함)"></a></li>
+          
+          
+                 
+          
+        
+            
+                   
+          
+          <li><a href="https://eungdapso.seoul.go.kr/Req/Req02/Req02_not2.jsp" onclick="fnMainHitClick('sidebanner3','42');"><img  src="/upload/imgBanner/IMGBANNER_20200721175614_74608.jpg" alt="코로나19 신고센터 집단감염 위험 준수사항 위반 신고"></a></li>
+                   
+                 
+          
+          <!-- //이미지배너 -->
+        </ul>
+      </div>
+    </div>
+    <!--// 사이드 배너 -->
+  
+    <!-- 이벤트 신청, 이달의 행사/축제, 자주 찾는 서비스 -->
+    <div class="inner_wrap">
+      <div class="inner4">
+          <section class="board_area3">
+              <h2>이벤트 신청</h2>
+              <ul>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/508330"  onclick="action_logging({tr_code:'event'});" >2020 서울미래유산 클립영상 공모전 연장공고</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/508383"  onclick="action_logging({tr_code:'event'});" >서울도서관, 디지털 교육을 쉽게, 함께! &lt;Digital Light&gt; 1차시 참가자 모집</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/508406"  onclick="action_logging({tr_code:'event'});" >서울디자인창업센터 2기 입주기업 모집</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    <b class="p_eco">경제</b>
+                    
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/economy/archives/509665"  onclick="action_logging({tr_code:'event'});" >개발자 데뷔 코스 싹(SSAC), SW 교육생 모집</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    <b class="p_wel">복지</b>
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/welfare/archives/522969"  onclick="action_logging({tr_code:'event'});" >2020년 청각장애인 인공달팽이관 소모품 구입비 지원자 추가모집 안내</a>
+                </li>
+              
+          </ul>
+          <p class="more"><a href="/eventreqst/list.do" target="_blank"  onclick="action_logging({tr_code:'event_more'});" ><span class="sr-only">이벤트 신청 더보기</span></a></p>
+        </section>
+        <!--// .board_area3 -->
+
+        <section class="board_area3 mgn">
+              <h2>이달의 행사 및 축제</h2>
+              <ul>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="cate p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/506224" onclick="action_logging({tr_code:'month'});" >&#39;문화로 토닥토닥&#39; 추석 연휴 &lt;온라인 문화예술 프로그램&gt; 안내</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="cate p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/507012" onclick="action_logging({tr_code:'month'});" >사회적 거리두기 강화에 따른 &lt;서울시 문화시설 휴관&gt; 안내</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="cate p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/508420" onclick="action_logging({tr_code:'month'});" >서울로미디어캔버스 2020 3회 전시</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    <b class="cate p_eco">경제</b>
+                    
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/economy/archives/509595" onclick="action_logging({tr_code:'month'});" >캠퍼스타운 창업 홍보영상 유튜브 조회수 경쟁대회 참여안내</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    <b class="cate p_cul">문화</b>
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/culture/archives/508539" onclick="action_logging({tr_code:'month'});" >2020 서울역사박물관 학술대회 &#39;모두를 위한 박물관&#39; 개최!</a>
+                </li>
+              
+
+              </ul>
+              <p class="more"><a href="/thismteventfstvl/list.do" onclick="action_logging({tr_code:'month_more'});" target="_blank" ><span class="sr-only">이달의 행사 및 축제 더보기</span></a></p>
+        </section>
+
+        <section class="m_service">
+              <h2>자주 찾은 서비스</h2>
+          <ul id="VS">
+          
+                <li title="서울관광"><a href="http://korean.visitseoul.net/" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울관광</a></li>
+              
+                <li title="지방세납부"><a href="https://etax.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">지방세납부</a></li>
+              
+                <li title="평생학습포털"><a href="https://sll.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">평생학습포털</a></li>
+              
+                <li title="인재개발원"><a href="https://hrd.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">인재개발원</a></li>
+              
+                <li title="서울일자리포털"><a href="https://job.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울일자리포털</a></li>
+              
+                <li title="내손안에서울"><a href="https://mediahub.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">내손안에서울</a></li>
+              
+                <li title="서울청년포털"><a href="https://youth.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울청년포털</a></li>
+              
+                <li title="서울부동산정보광장"><a href="http://land.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울부동산정보광장</a></li>
+              
+                <li title="에코마일리지"><a href="https://ecomileage.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">에코마일리지</a></li>
+              
+                <li title="서울스마트 불편신고"><a href="https://smartreport.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울스마트 불편신고</a></li>
+              
+              <!--
+            <li><a href="http://botanicpark.seoul.go.kr/" target="_blank">서울식물원</a></li>
+            <li><a href="http://bigdata.seoul.go.kr/" target="_blank">빅데이터캠퍼스</a></li>
+            <li><a href="http://legal.seoul.go.kr" target="_blank">법무행정서비스</a></li>
+            <li><a href="http://sgpd.seoul.go.kr" target="_blank">우수디자인공공인증제</a></li>
+            <li><a href="http://etax.seoul.go.kr/" target="_blank">서울시 ETAX</a></li>
+            <li><a href="https://semananji.seoul.go.kr" target="_blank">난지미술창작스튜디오</a></li>
+            <li><a href="http://mediahub.seoul.go.kr/" target="_blank">내 손안에 서울</a></li>
+            <li><a href="https://tgis.seoul.go.kr" target="_blank">교통안전시설물관리시스템</a></li>
+            <li><a href="http://wis.seoul.go.kr/" target="_blank">복지포털</a></li>
+            <li><a href="https://www.bikeseoul.com" target="_blank">서울자전거 따릉이</a></li>
+           -->
+          </ul>
+
+        </section>
+      </div>
+      <!--// .inner4 -->
+      <!-- inner5 -->
+      <div class="inner5">
+         <section class="m_shorcut">
+              <h2>분야별정보</h2>
+              <ul>
+                        <li class="house">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/citybuild/"     onclick="action_logging({tr_code:'section_citybuild'});" >주택</a></p>
+                        </li>
+                        <li class="economy">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/economy/"     onclick="action_logging({tr_code:'section_economy'});" >경제</a></p>
+                        </li>
+                        <li class="traffic">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/traffic/"     onclick="action_logging({tr_code:'section_traffic'});" >교통</a></p>
+                        </li>
+                        <li class="environment">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/env/"       onclick="action_logging({tr_code:'section_env'});" >환경</a></p>
+                        </li>
+                        <li class="welfare">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/welfare/"     onclick="action_logging({tr_code:'section_welfare'});" >복지</a></p>
+                        </li>
+                        <li class="safty">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/safe/"       onclick="action_logging({tr_code:'section_safe'});" >안전</a></p>
+                        </li>
+                        <li class="culture">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/culture/"     onclick="action_logging({tr_code:'section_culture'});" >문화</a></p>
+                        </li>
+                        <li class="work">
+                            <p class="m_tit"><a href="//news.seoul.go.kr/gov/"       onclick="action_logging({tr_code:'section_gov'});" >행정</a></p>
+                        </li>
+              </ul>
+          </section>
+      </div>
+      <!--// inner5 -->
+      <!-- 분야별소식 -->
+      <section class="inner6">
+        <h2>새소식</h2>
+        <div class="board_area2">
+        
+
+               
+                 <section class="first">
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+               
+
+              
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    <h3 class="p_cul">문화</h3>
+                    
+                    
+                  
+                  <a href="//news.seoul.go.kr/culture/archives/508593" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/09/culture_news0929.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">서울시 시립체육시설 운영 재개 및 방역 안내</p>
+              </a>
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 <section class="second">
+                 
+                 
+                 
+                 
+                 
+                 
+               
+
+              
+                
+          
+                
+                  
+                    
+                    
+                    
+                    <h3 class="p_eco">경제</h3>
+                    
+                    
+                    
+                    
+                  
+                  <a href="//news.seoul.go.kr/economy/archives/509437" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/economy/files/2020/09/5f6193d5067213.80438493.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">서울사랑상품권으로 배달주문도 한다고? 제로배달 유니온 사용설명서</p>
+              </a>
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 
+                 <section class="third">
+                 
+                 
+                 
+                 
+                 
+               
+
+              
+                
+          
+                
+          
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <h3 class="p_work">행정</h3>
+                  
+                  <a href="//news.seoul.go.kr/gov/archives/515463" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/gov/files/2020/09/5f719d143fd2229997794d00.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">추석 연휴 後 시 청사 집중방역기간 운영</p>
+              </a>
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 
+                 
+                 <section class="forth">
+                 
+                 
+                 
+                 
+               
+
+              
+                
+          
+                
+          
+                
+          
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    <h3 class="p_cul">문화</h3>
+                    
+                    
+                  
+                  <a href="//news.seoul.go.kr/culture/archives/507529" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/07/culture_news0721.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">&lt;서울시 문화시설 운영 재개&gt; 안내</p>
+              </a>
+                
+          
+                
+          
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 
+                 
+                 
+                 <section class="fifth">
+                 
+                 
+                 
+               
+
+              
+                
+          
+                
+          
+                
+          
+                
+          
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    <h3 class="p_wel">복지</h3>
+                    
+                  
+                  <a href="//news.seoul.go.kr/welfare/archives/522756" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/welfare/files/2020/09/welfare_news0916.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">서울시 공공야간약국 지정 운영 안내</p>
+              </a>
+                
+          
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 
+                 
+                 
+                 
+                 <section class="sixth">
+                 
+                 
+               
+
+              
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+                  
+                    
+                    
+                    
+                    
+                    <h3 class="p_env">환경</h3>
+                    
+                    
+                    
+                  
+                  <a href="//news.seoul.go.kr/env/archives/508399" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/env/files/2020/09/env_news0917.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">2020 서울억새축제 취소 및 하늘공원 한시적 폐쇄 안내</p>
+              </a>
+                
+          
+                
+          
+
+              </section>
+
+        
+
+               
+                 
+                 
+                 
+                 
+                 
+                 
+                 <section class="seventh">
+                 
+               
+
+              
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+          
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    <h3 class="p_cul">문화</h3>
+                    
+                    
+                  
+                  <a href="//news.seoul.go.kr/culture/archives/507692" onclick="action_logging({tr_code:'section_news'});" >
+                      <div class="img_area">
+                        <p class="img">
+                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/09/5f6b13f3ccac91.29275410.jpg" alt="">
+                        </p>
+                      </div>
+                <p class="tit">코로나로 지친 시민 응원! &lt;문화로 토닥토닥&gt; 프로그램 안내</p>
+              </a>
+                
+          
+
+              </section>
+
+        
+
+
+          <section class="eighth">
+            <h3 class="sr-only">특별기획</h3>
+            <a href="http://mediahub.seoul.go.kr/futuremap/" target="_blank"><img src="/upload/spcbanner/SPC_20200617142946_28673.jpg" onclick="fnMainHitClick('spcbanner','5');" alt="시민의 삶을 바꾸는 앞으로 10년, 서울미래지도"/></a>
+          </section>
+
+        </div>
+        <!--// .board_area2 -->
+        <p class="all"><a href="/realmnews/in/list.do"  onclick="action_logging({tr_code:'section_news_all'});" >전체보기</a></p>
+      </section>
+      <!--// 분야별소식 -->
+      <!-- 서울은지금(서울시SNS) -->
+      <div class="inner7">
+        <section class="board_area1">
+              <h2>서울영상</h2>
+          <div class="img_area">
+            <a href="https://www.youtube.com/watch?v=_LAGqOREImA" target="_blank" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=seoulnow_mediahub',location.href);" >
+              <p class="img"><img src="/upload/usfulInfo/USFUL_20200918110124_22347.jpg" alt=""></p>
+              <p class="txt">[서울집콕 360VR]ㅣ노을야경이 아름다운 노들섬에서 VR로 힐링하기~</p>
+            </a>
+              </div>
+          <h2 style="margin-top: -43px;margin-left: 300px;">서울소식</h2>
+           <div class="txt_area">
+                  <ul>
+                  
+                      <li>
+                        
+                          
+                    
+                    
+                          
+                          
+                          
+                          
+                        
+                        <a href="//www.seoul.go.kr/news/news_notice.do"><b>고시공고</b></a>
+                        <a href="//www.seoul.go.kr/news/news_notice.do#view/325558"  onclick="action_logging({tr_code:'seoulnow_notice'});" >2020년 북촌 주민공모지원사업 선정결과 공고</a>
+                      </li>
+            
+                      <li>
+                        
+                          
+                          
+                    
+                    
+                          
+                          
+                          
+                        
+                        <a href="//www.seoul.go.kr/news/news_tender.do"><b>입찰공고</b></a>
+                        <a href="//www.seoul.go.kr/news/news_tender.do#view/325543"  onclick="action_logging({tr_code:'seoulnow_tender'});" >사전규격 공개 SID 수변생태·여가문화공간 통합관리방안 연구용역</a>
+                      </li>
+            
+                      <li>
+                        
+                          
+                          
+                          
+                    
+                    
+                          
+                          
+                        
+                        <a href="//www.seoul.go.kr/news/news_employ.do"><b>채용시험</b></a>
+                        <a href="//www.seoul.go.kr/news/news_employ.do#view/325557"  onclick="action_logging({tr_code:'seoulnow_employ'});" >2020년도 서울특별시 지방공무원 제3회 공개경쟁 및 경력경쟁 임용시험 필기시험 일시 및 장소공고</a>
+                      </li>
+            
+                      <li>
+                        
+                          
+                          
+                          
+                          
+                    
+                    
+                          
+                        
+                        <a href="//www.seoul.go.kr/news/news_report.do"><b>보도자료</b></a>
+                        <a href="//www.seoul.go.kr/news/news_report.do#view/325552"  onclick="action_logging({tr_code:'seoulnow_report'});" >서울시-전남도 유통비용 절감 `공영시장도매인제` 가락시장에 도입</a>
+                      </li>
+            
+            </ul>
+          </div>
+        </section>
+
+        <section class="sns-lists">
+          <h2 class="sr-only">서울시 SNS 모아보기</h2>
+          <a href="http://mediahub.seoul.go.kr/reporter/services/sns.do" class="sns-banner" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});"><span>서울시 SNS</span></a>
+          <ul>
+            <li><a href="http://www.instagram.com/seoul_official" class="insta" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">인스타그램</a></li>
+            <li><a href="https://www.facebook.com/seoul.kr" class="facebook" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">페이스북</a></li>
+            <li><a href="http://twitter.com/seoulmania" class="twitter" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">트위터</a></li>
+            <li><a href="http://blog.naver.com/haechiseoul" class="blog" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">네이버블로그</a></li>
+            <li><a href="http://www.youtube.com/seoullive" class="youtube" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">유투브</a></li>
+            <li><a href="http://story.kakao.com/ch/seoul" class="kakaostory" target="_blank" title="새창열림" onclick="action_logging({tr_code:'seoul_sns'});">카카오스토리</a></li>
+          </ul>
+        </section>
+      </div>
+      <!--// 서울은지금(서울시SNS) -->
+      <!-- 이미지배너 -->
+      <section class="inner8">
+        <div class="slide">
+            <h2 class="sr-only">팝업존</h2>
+          <div class="main_banner">
+            <div class="mb_wrapper">
+              <ul class="mb_slide">
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="http://seoulon.or.kr" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2012" width="355" height="122" src="/upload/popupZone/24d6daf54dd44c1caa21c9641200a575.jpg" alt="서울에 온을 더하다! 서울온(화상회의스튜디오) 운영">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://www.kcomwel.or.kr/kcomwel/paym/join/targ.jsp" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2011" width="355" height="122" src="/upload/popupZone/e59c139c13904e11a5b9b87b2ace570b.jpg" alt="근로자가 1명이라도 있다면? 고용？산재보험 가입 꼭 이야!">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://www.instagram.com/p/CFcSOXeHEYM/?igshid=1ol47937smuq7" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2008" width="355" height="122" src="/upload/popupZone/62d75c7521b347f6a97d3a7df66985e6.jpg" alt="인도네시아 독립 75주년 기념 온라인 러닝 대회(INDONESIA IN KOREA VIRTUAL RACE 2020)">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="http://ksm.or.kr/ksm_pyongyangschool.html" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2007" width="355" height="122" src="/upload/popupZone/6597885058434e91b9535173dced73a5.jpg" alt="평양여행학교(Pyongyang Travel School) 참가신청서 작성하기">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://www.krcert.or.kr/webprotect/pcSecCheck.do" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2006" width="355" height="122" src="/upload/popupZone/65e68d2a9e804ad68db4e0a6042488f2.jpg" alt="PC원격 보안점검 내 PC 돌보미 코로나19로 인한 재택근무와 원격수업! 무료점검 받아보세요!!">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://nip.cdc.go.kr/irgd/index.do?service=getPopMedicalCenterList&SelFlag=RPM" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2004" width="355" height="122" src="/upload/popupZone/41daa7c50eab4be7b92d488269dc6433.jpg" alt="독감예방접종 의료기관 안내">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://www.sexoffender.go.kr/indexN.nsc" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="1989" width="355" height="122" src="/upload/popupZone/622137f8a1fe4dcebc620b7e2da9a182.jpg" alt="성범죄자 알림e">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="http://news.seoul.go.kr/gov/archives/511987" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="1970" width="355" height="122" src="/upload/popupZone/6796e42d3bcf4c5e96d4a5932b69254a.jpg" alt="집에서 서울시민카드(앱) 간편가입 서비스로 도서 대출증 발급받고 전자책 읽자! * 이용가능도서관 : 서울도서관, 마포 및 광진구립도서관">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://www.seoulwomanup.or.kr" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="1967" width="355" height="122" src="/upload/popupZone/8611a2d936174121bfa19eaf388a7340.jpg" alt="찾아가는 여성 취업 상담버스 일자리 부르릉">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="https://support.google.com/youtube/answer/175292?hI=ko" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="1961" width="355" height="122" src="/upload/popupZone/05b989df9de8481b8d07216ee9782932.jpg" alt="2020.3.1일부터 유튜브에서 인터넷 익스플로러 지원이 종료됩니다.
+">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="https://www.boho.or.kr/cyber/window7Finish.do" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank"><img data-cu-seq="1958" width="355" height="122" src="/upload/popupZone/7105e235f6b14ad38c972264f9700c30.jpg" alt="2020년 1월 14일 윈도우7 제품 기술지원이 종료됩니다." onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="http://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank"><img data-cu-seq="1879" width="355" height="122" src="/upload/popupZone/6ca77312e9624d379156507594cca8f8.jpg" alt="대한민국 국가상징 국민 통합과 자긍심의 상징" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="http://legal.seoul.go.kr/suggestion/" target="_blank"><img data-cu-seq="1866" width="355" height="122" src="/upload/popupZone/53648759f21a46e08e4b3ce97add71b2.jpg" alt="&#39;서울시민 참여입법&#39; 참여하면 우리의 미래가 희망으로 바뀝니다!" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="http://mediahub.seoul.go.kr/gongmo2" onclick="se_click_logging('http://mediahub.seoul.go.kr/gongmo2/tr_code?tr_code=banner',location.href);" target="_blank"><img data-cu-seq="1743" width="355" height="122" src="/upload/popupZone/e8c831a04dcc4447851779f030b24fca.jpg" alt="서울시의 모든 공모전을 한눈에 내손안에 서울 공모전 바로가기" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="https://www.sinmungo.go.kr/sinmungo_intro.jsp" onclick="se_click_logging('https://www.sinmungo.go.kr/sinmungo_intro.jsp/tr_code?tr_code=banner',location.href);" target="_blank"><img data-cu-seq="1748" width="355" height="122" src="/upload/popupZone/486e9f8ede9e4af488f1de020ba61b4d.jpg" alt="작은 두드림이 큰 울림으로 규제개혁 신문고 국민이 중심되는 규제개혁을 이루겠습니다." onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                           
+                             <a href="http://cis.seoul.go.kr" target="_blank"><img data-cu-seq="1941" width="355" height="122" src="/upload/popupZone/97c1735ff9604e019c9eca41b8417c06.jpg" alt="서울시 건설공사의 모든 것. 내 집앞 공사가 궁금하세요?" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+              </ul>
+            </div>
+            <div class="mb_control">
+              <div class="mb_pagers">
+                <span class="index_count">1</span>/<span class="total_count">10</span>
+              </div>
+              <ul class="">
+                <li class="btn_mb btn_mb_prev"></li>
+                <li><a href="#n" class="btn_mb_start" title="슬라이드 시작">슬라이드 시작</a><a href="#n" class="btn_mb_stop" title="슬라이드 정지">슬라이드 정지</a></li>
+                <li class="btn_mb btn_mb_next"></li>
+              </ul>
+            </div>
+          </div>
+          <!--// .main-banner -->
+        </div>
+        <!--// .slide -->
+      </section>
+      <!--// 이미지배너 -->
+    </div>
+    <!-- //inner_wrap -->
+
+    <!-- Gnb -->
+    <!-- ######################################################################## -->
+<!--
+	menu name: Pc Homepage Footer
+-->
+<!-- ######################################################################## -->
+
+
+
+
+
+
+<!-- PC 화면  -->
+
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="footer-link">
+                <ul>
+                    <li><a href="/helper/renewal.do" 					onclick="action_logging({tr_code:'footer_01'});" >홈페이지 도우미</a></li>
+                    <li class="policy"><a href="/helper/privacy.do?type=www" 	onclick="action_logging({tr_code:'footer_02'});" >개인정보처리방침</a></li>
+                    <li><a href="/helper/copyright.do" 					onclick="action_logging({tr_code:'footer_03'});" >저작권 정책</a></li>
+                    <li><a href="/helper/media.do" 						onclick="action_logging({tr_code:'footer_04'});" >영상정보처리기기 운영 관리방침</a></li>
+					<li><a href="/homepageCorrect/user/hpCorrect.do" 	onclick="action_logging({tr_code:'footer_05'});" >홈페이지 바로잡기</a></li>
+					<li><a href="/helper/siteMap.do" 					onclick="action_logging({tr_code:'footer_06'});" >사이트맵</a></li>
+					<!-- <li id="li_mogo"><a href="javascript:void(0);" onclick="fnMoView();return false;">모바일버전</a></li> -->
+                </ul>
+                <div class="sns sns-new">
+                    <!-- a href="/main/rss.xml" class="rss">RSS</a -->
+                    <a href="https://www.facebook.com/seoul.kr" class="fb" target="_blank" title="새창열림" onclick="se_click_logging('https://www.facebook.com/seoul.kr?tr_code=sns',location.href);" >페이스북</a>
+                    <a href="http://twitter.com/seoulmania" class="tw"  target="_blank" title="새창열림"  onclick="se_click_logging('http://twitter.com/seoulmania?tr_code=sns',location.href);" >트위터</a>
+					<a href="http://www.instagram.com/seoul_official" class="ins"  target="_blank" title="새창열림"  onclick="se_click_logging('http://www.instagram.com/seoul_official?tr_code=sns',location.href);" >인스타그램</a>
+					<a href="http://story.kakao.com/ch/seoul" class="ks"  target="_blank" title="새창열림"  onclick="se_click_logging('http://story.kakao.com/ch/seoul?tr_code=sns',location.href);" >카카오스토리</a>
+					<a href="http://www.youtube.com/seoullive" class="yt"  target="_blank" title="새창열림"  onclick="se_click_logging('http://www.youtube.com/seoullive?tr_code=sns',location.href);" >유튜브</a>
+					<a href="http://blog.naver.com/haechiseoul" class="bl"  target="_blank" title="새창열림"  onclick="se_click_logging('http://blog.naver.com/haechiseoul?tr_code=sns',location.href);" >블로그</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="inner">
+                <span class="foo-logo inquiry"><em class="sr-only">문의 전화번호 120, 정보를 못찾으셨나요? 120 다산콜센터로 물어보세요!</em></span>
+                <div class="address">
+                    <p class="city">서울특별시청  04524 서울특별시 중구 세종대로 110 <a href="/seoul/map.do"  onclick="action_logging({tr_code:'footer_07'});" class="map">[찾아오시는 길]</a></p>
+                    <p class="">대표전화 : 02-120 또는 02-731-2120</p>
+                    <p class="copy">&copy; Seoul Metropolitan Government all rights reserved</p>
+                </div>
+                <div class="mark">
+                	<!--
+                    <a href="/seoul/gcs.do"  onclick="action_logging({tr_code:'gcs'});" target="_blank" title="굿콘텐츠제공서비스 품질인증서"><img src="/res_newseoul/images/footer_mark_good.png" alt="이용자가 선택한 우수 콘텐츠 서비스 - 한국데이터베이스진흥원 인증마크" /></a>
+                    -->
+										<a href="/helper/ismsp.do" onclick="action_logging({tr_code:'ismsp'});" title="정보보호 및 개인정보보호 관리체계 인증"><img src="/res_newseoul/images/footer_mark_isms-p.png" alt="정보보호 및 개인정보보호 관리체계(ISMS-P) 인증마크"></a>
+                    <a href="/helper/web_accessibility.do" onclick="action_logging({tr_code:'wa'});" title="서울시 웹접근성 품질인증"><img src="/res_newseoul/images/footer_mark_wah.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a>
+                </div>
+            </div>
+        </div>		
+
+		<!-- 20180903 TOP Button 추가 -->
+		<a href="javascript:void(0)" class="btn-top" title="페이지 상단으로 이동"><img src="/res_newseoul/images/btn_top.png" alt="상단으로"></a>
+		<!-- 20191218 모바일버전보기 -->
+		<div id="li_mogo" class="btn_mobile" style="padding:20px 0 10px;text-align:center;background:#eee;border: 1px solid #aaa;margin-bottom:20px;">
+			<a href="javascript:void(0);" onclick="fnMoView();return false;" style="font-size:30px;font-weight:bold;color:#000;">모바일 버전 보기</a>
+		</div>
+
+		<script>
+			(function(global, $) {
+    			'use strict';
+    			var _scope, ctrl, topBtn;
+    			var init = function() {
+    				_scope = global;
+    				ctrl = false;
+    				topBtn = document.querySelector('.btn-top');
+    				bind();
+    			};
+    			var bind = function() {
+    				$(_scope).on('scroll', function() {
+    					var _scrollTop = $(_scope).scrollTop();
+    					if(ctrl == true && _scrollTop == 0) {
+    						ctrl = false;
+    						$(topBtn).removeClass('show');
+    					} else if( ctrl == false && _scrollTop > 20 ) {
+    						ctrl = true;
+    						$(topBtn).addClass('show');
+    						$(topBtn).off('click').on('click', function() {
+								$("html, body").animate({ scrollTop: 0 }, 300);
+							});
+    					}
+    				});
+    			};
+    			init();
+    		})(window, jQuery);
+
+			//모바일 버전
+			function fnMoView(){
+
+				$.removeCookie('isPcMode');
+
+				var url 	= window.location.protocol + "//" + window.location.hostname;
+				var exec	= (url.indexOf('localhost') > -1) ? '.html' : '.jsp';
+				url			= url + '/' + 'main/indexM' + exec;
+				window.location.href = url;
+			}
+
+		    if(!(com.util.isMobile.any())){
+		    	// pc conntected
+		    	$('#li_mogo').hide();
+		    };
+
+
+		</script>
+		<!-- //20180903 TOP Button 추가 -->
+
+    </footer>
+
+
+
+<!-- SUB 화면  -->
+
+
+    <!-- Gnb -->
+
+  </div>
+
+  <!-- ######################################################################## -->
+<!-- 
+	menu name: 주요사이트(개인화서비스) 팝업 - PC
+--> 
+<!-- ######################################################################## -->
+
+
+
+
+
+
+
+<!-- 레이어팝업_개인화 설정 팝업 -->
+<article class="pop-wrap" id="pop1_indvd" tabindex="0">
+    <div class="pop-body">
+        <h2>주요서비스 설정</h2>
+        <div class="pop-cont">
+            <div class="txt_area">
+                <p>주요서비스는 최대 개까지 설정이 가능합니다.</p>
+                <p>분야를 선택하신 후, 원하는 메뉴를 선택하시면 맞춤사이트가 설정됩니다.</p>
+            </div>
+            <div class="sel_area">
+            	<h3 class="sr-only">서비스 선택하기</h3>
+                <table>
+                   <caption class="sr-only">주요서비스 설정</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">
+                            <label for="searchMstSeq" class="sr-only">분야선택</label>
+                            <select id="searchMstSeq" name="searchMstSeq">
+	                            <option value="" selected>분야선택</option>
+								
+                            </select>
+                        </th>
+                        <th scope="col">내가 추가한 사이트</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                        	<div class="scroll_box">
+	                            <ul id="indvd_left_list">
+	                            </ul>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="scroll_box">
+	                            <ul id="indvd_right_list">
+	                            </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn-group half">
+                    <button id="btn_indvd_goyes" type="button" class="btn tiny bg-point "><span>확인</span></button>
+                    <button id="btn_indvd_gono" type="button" class="btn tiny"><span>취소</span></button>
+                </div>
+            </div>
+        </div>
+		<button class="btn-close"><span class="sr-only">닫기</span></button>
+    </div>
+</article>
+<!-- //개인화 설정 팝업 -->	
+
+
+<script>
+
+	var gv_cookieName 	= 'userIndvdlSvcPcCookie';
+	var gv_dvd_tot		= '';
+	gv_dvd_tot 			= Number(gv_dvd_tot);
+	
+	function _prop(key, value){
+		return ' ' + key + '="' + value + '" ';
+	}
+	
+	function _check(val){
+	 	if( val == 'undefined' || val == undefined || val == null || val == '' ){
+	 		return false;
+	 	} else {
+	 		return true;
+	 	}
+	}
+	
+	function fnDvdSvc_CookieItemList(){
+		 var cookie = $.cookie(gv_cookieName);
+		 var itemList;	
+		 if(cookie){
+		 	itemList = JSON.parse(cookie);
+		 } else {
+			itemList = [];
+		 }
+		 return itemList;
+	}
+	
+	// 내가 추가한 사이트 생성 및 클릭 이벤트
+	function fnDvdSvc_right_creage_event(seq, mstseq, url, group, homepage)
+	{
+		// 중복check
+		var isdup = false;
+		$('#indvd_right_list').find('li').each(function(){
+			if($(this).attr('data-seq')==seq){
+				isdup = true;
+				return false;
+			}
+		});
+		if(isdup) {
+			alert( homepage + ' 사이트는 내가 추가한 사이트에 이미 등록된 사이트 입니다.');
+			return;
+		}
+		
+        var tarBtnId	= 'indvd_right_btn_' + seq;	
+        var tarSeqId 	= 'indvd_right_li_' + seq;	
+		var html 		='';
+		// <li>청년 활동지원 온라인<button class="d_select"><span class="sr-only">선택 취소</span></button></li>
+        html +='<li ' + _prop('data-seq', seq) + _prop('data-mstseq', mstseq) + _prop('data-url',url) + _prop('data-group',group) + _prop('data-homepage',homepage) + _prop('id',tarSeqId) +'" >' + '[' + group + '] ' + homepage;
+        html +='<button class="d_select"' + _prop('id',tarBtnId) + ' >';
+        html +='<span class="sr-only">선택 취소</span>';
+        html +='</button>';
+        html +='</li>';
+	 	$("#indvd_right_list").append(html);
+	 	
+	 	$('#' + tarBtnId).click(function(){
+	 		
+	 		// left checkbox un check
+	 		var seq = $(this).closest('li').attr('data-seq');
+	 		fnDvdSvc_SourceList_UnChecked(seq);
+	 		
+	 		// remove html
+	 		var idx = Number($(this).closest('li').index());
+	 		//console.log('idx:' + idx);
+	 		$('#'+tarSeqId).remove();
+	 		
+	 		// next focus in tag
+	 		var tlen = $('#indvd_right_list').find('li').length;
+	 		if(tlen == 0){
+	 			$('#btn_indvd_goyes').focus();
+	 			return false;
+	 		} else if(tlen==idx){
+	 			idx = idx - 1;
+	 		}
+	 		//console.log('tlen:' + tlen + ' /idx:' + idx);
+	 		$('#indvd_right_list').find('li').eq(idx).children('button').focus();
+	 	});
+	}	
+	
+	// 주요서비스 check된 목록 un check 하기
+	function fnDvdSvc_SourceList_UnChecked(seq){
+		$('#indvd_left_list').find('input').each(function(e){
+			if($(this).attr('data-seq')==seq){
+				$(this).prop('checked', false);
+				return false;
+			}
+		});
+	}
+	
+	
+	// 내가 추가한 사이트 목록 보여주기
+	function fnDvdSvc_DistList(){
+		 	
+		var seq 		= "";
+		var mstseq 		= "";
+	 	var url 		= "";
+	 	var group 		= "";
+	 	var homepage 	= "";
+	 	var count		= 0;
+	 	
+	 	$("#indvd_right_list").html('');
+	 	
+	 	var itemList 		= fnDvdSvc_CookieItemList();
+	 	var new_itemList 	= [];
+
+	 	for(var j in itemList){
+	 		seq     	= itemList[j].seq;
+	 		mstseq     	= itemList[j].mstseq;
+	 		url        	= itemList[j].url;
+	 		group      	= itemList[j].group;
+	 		homepage   	= itemList[j].homepage;
+	 		if(_check(seq) && _check(mstseq) && _check(url) && _check(group) && _check(homepage)){
+	 			new_itemList.push(itemList[j]);
+	 		}
+	 	}
+	 	
+		//쿠키 초기화
+		$.removeCookie(gv_cookieName);
+		
+	 	if(new_itemList.length > 0){
+			var inStr = JSON.stringify(new_itemList);
+			$.cookie(gv_cookieName, inStr,{expires:360, path:'/'});
+	 	}
+	 	
+	 	for(var k in new_itemList){
+	 		count ++;
+	 		seq     	= new_itemList[k].seq;
+	 		mstseq     	= new_itemList[k].mstseq;
+	 		url        	= new_itemList[k].url;
+	 		group      	= new_itemList[k].group;
+	 		homepage   	= new_itemList[k].homepage;
+	        fnDvdSvc_right_creage_event(seq, mstseq, url, group, homepage);	        
+	        if(count==1){
+	        	fnDvdSvc_SourceList(mstseq);
+	        }
+	 	}
+	 	
+	 	if(new_itemList.length==0){
+ 			$('#searchMstSeq').find('option:eq(0)').prop('selected',true);
+ 		 	$("#indvd_left_list").html('');
+	 	}
+	}
+	
+	// 내가 추가한 사이트 값 확인하기
+	function fnDvdSvc_SourceDataCheck(seq){
+		
+		var chk = false;
+		$('#indvd_right_list').children('li').each(function(e){
+			if($(this).attr('data-seq')==seq){
+				chk = true;
+				return false;
+			}
+		});
+		return chk;
+	}
+	
+	// 주요서비스 change event 
+	function fnDvdSvc_SourceList(mstseq){
+
+	 	var disChkArr 	= [];
+	 	var param 		= null;
+	 	
+	 	if(_check(mstseq)){
+		 	param = {"searchMstSeq": mstseq};
+ 			$('#searchMstSeq').val(mstseq);
+	 	} else {
+ 			$('#searchMstSeq').find('option:eq(0)').prop('selected',true);
+ 		 	$("#indvd_left_list").html('');
+ 			return;
+	 	}
+	 	
+	 	$("#indvd_left_list").html('');
+	 	com.ajax({
+	 		type		: "POST"
+	 		,url		: "/indvdlsvc/indvdlSvcSourceList.do"
+	 		,data		: param
+	 		,success: function(sdata){
+	 			var data    	= sdata.data;
+	 			var html_tr 	= "";
+	 			var check_str	= "";
+	 			for(i=0; i<data.length; i++){
+					// <li><input type="checkbox" name="sel1" id="sel1"><label for="sel1">청년 활동지원 온라인</label></li>
+					check_str = (fnDvdSvc_SourceDataCheck(data[i].SEQ)) ? 'checked' : '';
+	 				html_tr += '<li>';
+	 				html_tr += '<span class="custom-input">';
+	 				html_tr += '<input type="checkbox" ' + check_str + _prop('id', 'sell_'+i) + _prop('data-seq', data[i].SEQ) + _prop('data-mstseq', mstseq) + _prop('data-group', data[i].BIG_CLASS_NM) + _prop('data-url', data[i].URL) + _prop('data-homepage', data[i].HOMEPAGE) + ' >';  	
+	 				html_tr += '<label for="sell_' + i + '" >' + data[i].HOMEPAGE + '</label>';
+	 				html_tr += '</span>';
+	 				html_tr += '</li>';
+	 			}
+	 			$("#indvd_left_list").html(html_tr);
+	 			fnDvdSvc_SourceList_event();
+	 		}
+	 		,error	: function(edata){
+	 		}
+	 	});			
+	} 
+	
+	// 주요사이트 checkbox 클릭시 처리
+	function fnDvdSvc_SourceList_event()
+	{
+		$("#indvd_left_list").find('input').each(function(){
+			$(this).change(function(){
+				var seq 		= $(this).attr('data-seq');
+				var mstseq 		= $(this).attr('data-mstseq');
+				var url 		= $(this).attr('data-url');
+				var group 		= $(this).attr('data-group');
+				var homepage 	= $(this).attr('data-homepage');
+				var html		= '';
+				if($(this).prop('checked')){
+					if($('#indvd_right_list').find('li').length < gv_dvd_tot){
+					 	fnDvdSvc_right_creage_event(seq, mstseq, url, group, homepage);
+					} else {
+						alert('내가 추가한 사이트는  최대 ' + gv_dvd_tot + '개 까지만 등록할 수 있습니다.');
+						$(this).prop('checked', false);
+						return false;
+					}
+				} else {
+					// 삭제
+					fnDvdSvc_right_item_delete(seq);
+				}
+			});
+		});
+	}	
+	
+	// 내가 추가한 사이트 1건 삭제하기
+	function fnDvdSvc_right_item_delete(seq){
+		
+		$('#indvd_right_list').children('li').each(function(e){
+			if($(this).attr('data-seq')==seq){
+				$(this).remove();
+			}
+		});
+	}
+	
+	//주요사이트(개인화 서비스) 쿠키에 저장
+	function fnDvdSvc_SaveExpsr()
+	{
+		var array = [];
+		//쿠키 초기화
+		$.removeCookie(gv_cookieName);
+		$('#indvd_right_list').find('li').each(function(i){
+			var obj 		= new Object();
+			obj.seq	    	= $(this).attr('data-seq');
+			obj.mstseq	   	= $(this).attr('data-mstseq');
+			obj.url        	= $(this).attr('data-url');
+			obj.group      	= $(this).attr('data-group');
+			obj.homepage   	= $(this).attr('data-homepage');
+			array.push(obj);
+		});
+		
+		var inStr = JSON.stringify(array);
+		$.cookie(gv_cookieName, inStr,{expires:360, path:'/'});
+		alert('주요사이트(개인화서비스) ' + array.length + ' 건이 저장 되었습니다.');
+	}
+	
+	// 대표홈페이지 에 처음 노출시킬 목록
+	function fnDvdSvc_BasicList(id){
+		
+	 	com.ajax({
+	 		type		: "POST"
+	 		,url		: "/indvdlsvc/indvdListForHomepage.do"
+	 		,data		: {}
+	 		,success: function(sdata){
+	 			fnDvdSvc_DistList_Homepage(id, sdata.data);
+	 		}
+	 		,error	: function(edata){
+	 		}
+	 	});			
+	} 	
+	
+	function fnDvdSvc_DistList_Homepage(id, data){
+	 	
+		var seq 		= "";
+		var mstseq 		= "";
+	 	var url 		= "";
+	 	var group 		= "";
+	 	var homepage 	= "";
+	 	var html 		= "";
+	 	var count		= 0;
+	 	
+	 	var trcode_conv = 'onclick="action_logging({tr_code:' + "'bookmark'" + '});"';
+	 	
+	 	$('#'+id).html('');
+	 	
+		//[1] cookie list	 	
+	 	var itemList = fnDvdSvc_CookieItemList();
+	 	for(var k in itemList){
+	 		seq     	= itemList[k].seq;
+	 		mstseq     	= itemList[k].mstseq;
+	 		url        	= itemList[k].url;
+	 		group      	= itemList[k].group;
+	 		homepage   	= itemList[k].homepage;
+            //<li><a href=""></a></li>
+			html += '<li>';
+			html += '<a target="_blank" href="' + url + '"' + trcode_conv + ' >' + homepage + '</a>';
+			html += '</li>';
+			count ++;
+			if(count == gv_dvd_tot) {
+			 	$('#'+id).html(html);
+				return;
+			}
+	 	}
+	 	//[2] db list
+	 	for (var j = 0; j < data.length; j++) {
+	 		seq     	= data[j].SEQ;
+	 		url        	= data[j].URL;
+	 		homepage   	= data[j].HOMEPAGE;
+            //<li><a href=""></a></li>
+			html += '<li>';
+			html += '<a target="_blank" href="' + url + '"' + trcode_conv + ' >' + homepage + '</a>';
+			html += '</li>';
+			count ++;
+			if(count == gv_dvd_tot) {
+			 	$('#'+id).html(html);
+				return;
+			}
+	 	}
+	 	$('#'+id).html(html);
+	}
+	
+	$('#searchMstSeq').change(function(e) {
+		fnDvdSvc_SourceList($(this).val());
+	});
+		
+	
+	// 팝업창에서 탭클릭시 팝업 내에서만 탭 포커싱 이동되게.. (개인화서비스)
+	var btnSetting = $('#mainsvc_btn_setting');
+	var layerSetting = $('#pop1_indvd');
+	front.btnClick(btnSetting, function($this) {
+		front.showCallback(layerSetting, function() {
+			layerSetting.focus();
+			$('body').append('<div class="pop-dimm"></div>');
+			$('body').addClass('fixed');
+			var closeBtn = layerSetting.find('.btn-close');
+			front.layerFocus(layerSetting, closeBtn);
+			
+			/* 오픈시 */
+			fnDvdSvc_DistList();
+			
+			/* 확인 버튼 */
+			front.btnClick($('#btn_indvd_goyes'), function() {
+				fnDvdSvc_SaveExpsr();
+				front.hideCallback(layerSetting, function () {
+					$('.pop-dimm').remove();
+					$("body").removeClass("fixed");
+					$this.focus();
+				});
+			    fnDvdSvc_BasicList('indvd_ul');	    
+			});
+			
+			/* 닫기 버튼 */
+			front.btnClick(closeBtn, function() {
+				front.hideCallback(layerSetting, function() {
+					$('.pop-dimm').remove();
+					$("body").removeClass("fixed");
+					$this.focus();
+				});
+			});
+			/* 취소 버튼 */
+			front.btnClick( $(btn_indvd_gono), function() {
+				front.hideCallback(layerSetting, function() {
+					$('.pop-dimm').remove();
+					$("body").removeClass("fixed");
+					$this.focus();
+				});
+			});
+		});
+	});			
+
+	$(document).ready(function() {
+		fnDvdSvc_BasicList('indvd_ul');
+	});
+	
+	
+</script>
+
+
+
+<script>
+
+/**
+ * =============================================================
+ * 선언
+ */
+
+var _param;
+
+/**
+ * =============================================================
+ * function 구현
+ */
+
+function fnNewsImgProtocol(){
+
+    if(com.util.isMobile.any()){
+      //mobile conntected
+      if(com.util.isProtocol('https')){
+        var src = null;
+        $('.newsImage').each(function(){
+          src = $(this).attr('src');
+          src = com.util.replaceAll(src, 'http', 'https');
+          $(this).attr('src', src);
+        });
+      }
+    };
+}
+
+
+function fnMainHitClick(P_TYPE, P_SEQ){
+
+  var t_type = P_TYPE;
+  if(P_TYPE.indexOf('sidebanner')>-1) {
+    t_type = 'sidebanner';
+  } else if(P_TYPE.indexOf('maintitle')>-1) {
+    t_type = 'maintitle';
+  }
+
+  var param   = {'P_TYPE':t_type, 'P_SEQ':P_SEQ};
+
+  $.ajax({
+    type    : "POST"
+    ,url    : "/seoul/hitcount.do"
+    ,data    : param
+    ,success: function(sdata){
+      return;
+    }
+    ,error  : function(edata){
+      return;
+    }
+  });
+
+  if(P_TYPE=='maintitle'){          //시민참여(기존핫이슈)
+    action_logging({'tr_code':'hotissue'});
+  } else if(P_TYPE=='maintitle1'){      //주요뉴스 20191129
+    action_logging({'tr_code':'main_news'});
+  } else if(P_TYPE=='sidebanner1'){
+    action_logging({'tr_code':'banner01'});
+  } else if(P_TYPE=='sidebanner2'){
+    action_logging({'tr_code':'banner02'});
+  } else if(P_TYPE=='sidebanner3'){
+    action_logging({'tr_code':'banner03'});
+  } else if(P_TYPE=='spcbanner'){
+    action_logging({'tr_code':'special_banner'});
+  } else if(P_TYPE=='mayor'){            //시장님소식
+    action_logging({'tr_code':'mayor_news'});
+  }
+}
+
+
+/**
+ * =============================================================
+ * Event Listener
+ * 화면에서 사용될 이벤트 등록
+ */
+
+function fnEventListener() {
+
+  var sliding = false;
+
+  // 팝업존 클릭수
+  $('.mb_slide').find('a').each(function(){
+    var seq = $(this).children('img').attr('data-cu-seq');
+    $(this).click(function(){
+      fnMainHitClick('pop',seq);
+    });
+  });
+
+  // 스토리인서울 상단배너 접근성
+  $('#div_storyins .img a').on('keyup', function(e){
+    if (e.keyCode == 9) $(this).parent('.img').css('border', '1px dotted #000');
+  });
+  $('#div_storyins .img a').on('keydown', function(e){
+    if (e.keyCode == 9) $(this).parent('.img').css('border', '0px dotted #000');
+  });
+
+
+  /* Hot Issue Banner */
+  var hi_total_count = $(".hi_slide > li").length;
+  if(hi_total_count > 1){
+    var hi_slide = $(".hi_slide").bxSlider({
+      touchEnabled: false,
+      auto : true,
+      autoControls: false,
+      infiniteLoop : true,
+      pause : 5000,
+      autoHover : true,
+      pager : false,
+      nextSelector : '.btn_hi_next',
+      prevSelector : '.btn_hi_prev',
+      onSliderLoad : function(){
+        $(".hi_pagers > .total_count").text(hi_total_count);
+        $("#slide1").css('visibility', 'visible').animate({opacity: 1});
+      },
+      onSlideAfter : function($slideElement, oldIndex, newIndex) {
+        $(".hi_pagers > .index_count").text(newIndex+1);
+      }
+    });
+    $(".btn_hi_start").on("click",function(){
+      $(this).css("display","none");
+      $(".btn_hi_stop").css("display","block");
+      $(".btn_hi_stop").focus()
+      hi_slide.startAuto();
+    });
+    $(".btn_hi_stop").on("click",function(){
+      $(this).css("display","none");
+      $(".btn_hi_start").css("display","block");
+      $(".btn_hi_start").focus()
+      hi_slide.stopAuto();
+    });
+    $(".btn_hi").bind("mouseenter",function(e){
+      e.preventDefault();
+      //$(".btn_hi_start").css("display","block");
+      //$(".btn_hi_stop").css("display","none");
+      //$('.btn_hi_stop').trigger('click');
+      hi_slide.stopAuto();
+    });
+    $(".btn_hi").bind("mouseleave",function(e){
+      e.preventDefault();
+      if($('.btn_hi_start').css('display') == 'block') {
+        hi_slide.stopAuto();
+      } else {
+        hi_slide.startAuto();
+      }
+      //$('.btn_hi_start').trigger('click');
+      //$(".btn_hi_start").css("display","none");
+      //$(".btn_hi_stop").css("display","block");
+    });
+
+    var hi_active_key;
+    $(".slide_content1 h3 a").on("keydown",function(e){
+      if(e.keyCode == 9 && !e.shiftKey ){
+        e.preventDefault();
+        hi_slide.reloadSlider({
+          auto : false,
+          infiniteLoop : false,
+          speed : 0,
+          controls : false,
+          autoControls : false,
+          autoHover : false,
+          pager : false,
+        });
+        setTimeout(function(){
+          $(".hi_slide > li:first-child > a").focus();
+        },200);
+        $(".btn_hi_prev").html("<a href='#n' class='btn_hot_prev'>이전</a>");
+        $(".btn_hi_next").html("<a href='#n' class='btn_hot_next'>다음</a>");
+        $(".hi_control > .hi_play").hide();
+        //$(".hi_control > .hi_pagers").css("left","50%").css("transform","translate(-50%, -50%)");
+
+        $('.hi_slide > li > a').on('focusin', function(e){
+          e.preventDefault();
+          var idx = $(this).parent().index();
+          $(".hi_pagers > .index_count").text(idx + 1);
+          hi_active_key = idx;
+        });
+        $(".btn_hot_prev").bind("click",function(e){
+          e.preventDefault();
+          //console.log("이전슬라이드 버튼");
+          if(hi_active_key==0){
+          }else{
+            var slideNum = hi_active_key - 1;
+            $(".hi_slide > li:eq("+slideNum+") > a").trigger("focus");
+            $(this).focus();
+          }
+        });
+        $(".btn_hot_next").bind("click",function(e){
+          e.preventDefault();
+          //console.log("다음슬라이드 버튼");
+          lastSlide = $(".hi_slide > li").length;
+          if(hi_active_key==lastSlide){
+          }else{
+            var slideNum = hi_active_key + 1;
+            $(".hi_slide > li:eq("+slideNum+") > a").trigger("focus");
+            $(this).focus();
+          }
+        })
+      }
+    });
+  }
+
+
+  /* Hot Issue Banner */
+  var ci_total_count = $(".ci_slide > li").length;
+  if(ci_total_count > 1){
+    var ci_slide = $(".ci_slide").bxSlider({
+      touchEnabled: false,
+      auto : false,
+      autoControls: false,
+      infiniteLoop : true,
+      pause : 5000,
+      autoHover : true,
+      pager : false,
+      nextSelector : '.btn_ci_next',
+      prevSelector : '.btn_ci_prev',
+      onSliderLoad : function(){
+        $(".ci_pagers > .total_count").text(ci_total_count);
+        $("#slide2").css('visibility', 'visible').animate({opacity: 1});
+      },
+      onSlideAfter : function($slideElement, oldIndex, newIndex) {
+        $(".ci_pagers > .index_count").text(newIndex+1);
+      }
+    });
+    $(".btn_ci_start").on("click",function(){
+      $(this).css("display","none");
+      $(".btn_ci_stop").css("display","block");
+      $(".btn_ci_stop").focus()
+      ci_slide.startAuto();
+    });
+    $(".btn_ci_stop").on("click",function(){
+      $(this).css("display","none");
+      $(".btn_ci_start").css("display","block");
+      $(".btn_ci_start").focus()
+      ci_slide.stopAuto();
+    });
+    $(".btn_ci").bind("mouseenter",function(e){
+      e.preventDefault();
+      ci_slide.stopAuto();
+    });
+    $(".btn_ci").bind("mouseleave",function(e){
+      e.preventDefault();
+      if($('.btn_ci_start').css('display') == 'block') {
+        ci_slide.stopAuto();
+      } else {
+        ci_slide.startAuto();
+      }
+    });
+
+    var ci_active_key;
+    $(".slide_content2 h3 a").on("keydown",function(e){
+
+      if(e.keyCode == 9 && !e.shiftKey ){
+        e.preventDefault();
+        ci_slide.reloadSlider({
+          auto : false,
+          infiniteLoop : false,
+          speed : 0,
+          controls : false,
+          autoControls : false,
+          autoHover : false,
+          pager : false,
+        });
+        setTimeout(function(){
+          $(".ci_slide > li:first-child > a").focus();
+        },200);
+        $(".btn_ci_prev").html("<a href='#n' class='btn_hot_prev'>이전</a>");
+        $(".btn_ci_next").html("<a href='#n' class='btn_hot_next'>다음</a>");
+        $(".ci_control > .ci_play").hide();
+        //$(".ci_control > .ci_pagers").css("left","50%").css("transform","translate(-50%, -50%)");
+
+        $('.ci_slide > li > a').on('focusin', function(e){
+          e.preventDefault();
+          var idx = $(this).parent().index();
+          $(".ci_pagers > .index_count").text(idx + 1);
+          ci_active_key = idx;
+        });
+        $(".btn_hot_prev").bind("click",function(e){
+          e.preventDefault();
+          console.log("이전슬라이드 버튼");
+          if(ci_active_key==0){
+          }else{
+            var slideNum = ci_active_key - 1;
+            $(".ci_slide > li:eq("+slideNum+") > a").trigger("focus");
+            $(this).focus();
+          }
+        });
+        $(".btn_hot_next").bind("click",function(e){
+          e.preventDefault();
+          console.log("다음슬라이드 버튼");
+          lastSlide = $(".ci_slide > li").length;
+          if(ci_active_key==lastSlide){
+          }else{
+            var slideNum = ci_active_key + 1;
+            $(".ci_slide > li:eq("+slideNum+") > a").trigger("focus");
+            $(this).focus();
+          }
+        })
+      }
+    });
+  }
+
+
+  $('.slide_content h3 a').on('click', function(e){
+    e.preventDefault();
+    $('.slide_content1').css('margin-top', '0');
+    if(!$(this).hasClass('on')) {
+      var ids = $(this).attr('href');
+      $('.slide_content h3 a').removeClass('on').find('.sr-only').text('');
+      $(this).addClass('on').find('.sr-only').text('선택됨');
+      $('.hotissue_banner').css('display', 'none');
+      $(ids).css('display', 'block');
+
+      if(ids == '#slide1') {
+        hi_slide.startAuto();
+        ci_slide.stopAuto();
+        console.log('slide1');
+      } else {
+        hi_slide.stopAuto();
+        ci_slide.startAuto();
+      }
+    }
+  });
+
+  $('.slide_content h3 a').on('keyup', function(e){
+    e.preventDefault();
+    $('.slide_content1').css('margin-top', '0');
+    if(e.keyCode == 9 && !e.shiftKey){
+      if(!$(this).hasClass('on')) {
+        var ids = $(this).attr('href');
+        $('.slide_content h3 a').removeClass('on').find('.sr-only').text('');
+        $(this).addClass('on');
+        $('.hotissue_banner').css('display', 'none');
+        $(ids).css('display', 'block');
+
+        if(ids == '#slide1') {
+          hi_slide.startAuto();
+          ci_slide.stopAuto();
+          console.log('slide1');
+        } else {
+          hi_slide.stopAuto();
+          ci_slide.startAuto();
+        }
+      }
+    }
+  });
+
+  // 슬라이드 탭
+  /*
+  if($('body').hasClass('citizen')) {
+    $('.slide_content2 h3 a').trigger('click'); // 시민참여 우선
+  }
+  */
+
+  /* Popup Zone Banner */
+  var total_count = $(".mb_slide > li").length;
+  var mb_slide = $(".mb_slide").bxSlider({
+    touchEnabled: false,
+    auto : true,
+    speed : 600,
+    infiniteLoop : true,
+    pager : false,
+    minSlides : 2,
+    maxSlides : 3,
+    slideWidth : 355,
+    moveSlides : 1,
+    slideMargin : 43,
+    pause : 2500,
+    nextSelector : '.btn_mb_next',
+    prevSelector : '.btn_mb_prev',
+    onSliderLoad : function(){
+      $(".mb_pagers > .total_count").text(total_count);
+    },
+    onSlideAfter : function($slideElement, oldIndex, newIndex) {
+       $(".mb_pagers > .index_count").text(newIndex+1);
+    }
+  });
+  $(".btn_mb_start").on("click",function(){
+    $(this).css("display","none");
+    $(".btn_mb_stop").css("display","block");
+    mb_slide.startAuto();
+  });
+  $(".btn_mb_stop").on("click",function(){
+    $(this).css("display","none");
+    $(".btn_mb_start").css("display","block");
+    mb_slide.stopAuto();
+  });
+  $(".mb_slide li a").on("focusin",function(e){
+    var idx = $(this).parent().index();
+    $(".mb_pagers > .index_count").text(idx+1);
+  });
+
+  $(".btn_mb").bind("mouseenter",function(e){
+    e.preventDefault();
+    /*
+    $(".btn_mb_stop").css("display","none");
+    $(".btn_mb_start").css("display","block");
+    */
+    mb_slide.stopAuto();
+  });
+  $(".btn_mb").bind("mouseleave",function(e){
+    e.preventDefault();
+    /*
+    $(".btn_mb_stop").css("display","block");
+    $(".btn_mb_start").css("display","none");
+    */
+    mb_slide.startAuto();
+  });
+
+  var mb_active_key;
+  $(".sns-lists > ul > li:last-child > a").on("keydown",function(e){
+  //$(".m_service3 > ul > li:last-child > a").on("keydown",function(e){
+    if(e.keyCode == 9 && !e.shiftKey ){
+      mb_slide.reloadSlider({
+        auto : false,
+        infiniteLoop : false,
+        minSlides : 2,
+        maxSlides : 3,
+        moveSlides : 1,
+        slideWidth : 355,
+        slideMargin : 43,
+        pager : false,
+        controls : false
+      });
+      setTimeout(function(){
+        $(".mb_slide > li:first-child > a").focus();
+      },200);
+      $(".btn_mb_prev").html("<a href='#n' class='btn_mb_slide_prev' title='이전슬라이드'>이전슬라이드</a>");
+      $(".btn_mb_next").html("<a href='#n' class='btn_mb_slide_next' title='다음슬라이드'>다음슬라이드</a>");
+      $(".mb_control > ul > li:nth-child(2)").hide();
+
+      $('.mb_slide > li > a').on('focusin', function(e){
+        e.preventDefault();
+        var idx = $(this).parent().index()+1;
+        $(".mb_pagers > .index_count").text(idx);
+        mb_active_key = idx - 1;
+      });
+      $(".btn_mb_slide_prev").bind("click",function(e){
+        e.preventDefault();
+        //console.log("aa");
+        if(mb_active_key==0){
+        }else{
+          var slideNum = mb_active_key - 1;
+          $(".mb_slide > li > a").removeClass("on");
+          $(".mb_slide > li:eq("+slideNum+") > a").trigger("focus").addClass("on");
+          $(this).focus();
+        }
+      });
+
+      $(".btn_mb_slide_next").bind("click",function(e){
+        e.preventDefault();
+        //console.log("bb");
+        lastSlide = $(".mb_slide > li").length;
+        if(mb_active_key==lastSlide){
+        }else{
+          var slideNum = mb_active_key + 1;
+          $(".mb_slide > li > a").removeClass("on");
+          $(".mb_slide > li:eq("+slideNum+") > a").trigger("focus").addClass("on");
+          $(this).focus();
+        }
+      });
+      $(".footer-link > ul > li > a").on("keyup",function(e){
+        if(e.keyCode == 9 && !e.shiftKey ){
+          $(".mb_slide > li > a").removeClass("on");
+        }
+      });
+    }
+  });
+  /* 레이어팝업 닫기 버튼 */
+  $('.layer_alert .btn_close').click(function(){
+    $(this).closest(".layer_alert").slideUp(200);
+  });
+
+	$('.layer_alert .btn_close').on('keydown', function(e){
+		if(e.keyCode == 9 && !e.shiftKey ){
+			$(this).closest(".layer_alert").slideUp(200);
+		}    
+  });
+
+}
+
+//get 자주찾는서비스
+function fnGetVisitorService(){
+
+  if($.cookie("WL_PCID_DATA") != undefined){
+    var cookiePCID_DATA = JSON.parse($.cookie("WL_PCID_DATA"));
+
+    if(cookiePCID_DATA["pcid"] == $.cookie("WL_PCID")){
+      fnGetVisitorServiceLoad(cookiePCID_DATA);
+    }else{
+      fnGetVisitorServiceAjax();
+    }
+  }else{
+    fnGetVisitorServiceAjax();
+  }
+}
+
+function fnGetVisitorServiceAjax(){
+  com.ajax({
+    type    : "POST"
+    ,url    : "/visitor/getVisitorService.do"
+    ,success: function(sdata){
+
+      fnGetVisitorServiceLoad(sdata);
+
+      //속도 개선을 위해 쿠키를 담는다.3시간 단위
+      var date = new Date();
+      date.setTime(date.getTime() + 3*60*60*1000);  //3시간
+
+      $.removeCookie("WL_PCID_DATA");
+      $.removeCookie("WL_PCID_DATA", {path:"/", domain:"seoul.go.kr"});
+
+      $.cookie("WL_PCID_DATA", JSON.stringify(sdata), {expires:date, path:"/", domain:"seoul.go.kr"});
+      //$.cookie("WL_PCID_DATA", JSON.stringify(sdata), {expires:date, path:'/'});
+
+    }
+    ,error  : function(edata){
+      console.log("getVisitorService failed");
+    }
+  });
+}
+
+function fnGetVisitorServiceLoad(sdata){
+  if(sdata){
+    $("#VS").empty();
+    $.each(sdata.recom_list, function(index, data) {
+      //console.log("length::"+(data.SERVICE_NAME).length);
+      //console.log("substr::"+(data.SERVICE_NAME).substr(0,8));
+
+      var recomList= "";
+      var cutSvcNm = "";
+      if(data.FLAG == "1") {
+        recomList+='<li  class="best" title="'+data.SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
+      } else {
+        recomList+='<li title="'+data.SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
+      }
+      if( (data.SERVICE_NAME).length > 11 ) {
+        cutSvcNm = (data.SERVICE_NAME).substr(0,11)+"...";
+      } else {
+        cutSvcNm = (data.SERVICE_NAME);
+      }
+      recomList+='<a href="'+data.SERVICE_URL+'" target="_blank" onclick="action_logging({tr_code:\'bookmark\'});">'+cutSvcNm+'</a></li>';
+
+      //console.log(recomList);
+      $("#VS").append(recomList);
+    });
+  }
+}
+
+
+/**
+ * =============================================================
+ * 프로그램시작
+ */
+function createComp() {
+
+  fnNewsImgProtocol();
+  fnEventListener();
+  //20191028 add 자주찾는서비스
+  //console.log("startCreateComp ::");
+  fnGetVisitorService();
+  
+  //실시간 교통사고(재난/화재)
+  //fnTrafficService();
+
+};
+
+$(document).ready(function() {
+
+  // 초기실행 (필수)
+  com.init(createComp);
+
+});
+
+</script>
+
+
+<!-- weblog -->
+<script src="//weblog.eseoul.go.kr/wlo/js/install.js" ></script>
+<!-- //weblog -->
+
+
+</body>
+
+</html>
