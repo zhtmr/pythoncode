@@ -3,8 +3,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,vscode
 
 ### Python ###
-*.csv
-*.bz2
+200*.csv
+200*.bz2
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
