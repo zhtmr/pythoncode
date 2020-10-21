@@ -2,7 +2,7 @@ import pandas as pd
 import functest as ft
 import matplotlib.pyplot as plt
 
-data=pd.read_csv("delayData.csv",names=['carrier','sum','avg'])
+data=pd.read_csv("delaydata.csv",sep='\t|,',names=['carrier','sum','avg'])
 print(data)
 
 groupList=['sum','avg']
