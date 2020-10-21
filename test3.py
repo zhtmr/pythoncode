@@ -25,23 +25,31 @@ def ConvertFile(file,delim):
 
 ConvertFile('canceldata.csv','\t')
 setHangleFont()
-csvdata=pd.read_csv('convcanceldata.csv',encoding='cp949', names=['year&month','count'])
+csvdata=pd.read_csv('convcanceldata.csv',encoding='cp949', names=['yearmonth','count'])
 print(csvdata)
-plt.figure()
-
 # year, month 기반으로 인덱스, 정렬
-data2 = csvdata.set_index(['year&month']).sort_index()
+data2 = csvdata.set_index(['yearmonth']).sort_index()
 # 차트에 맞는 형식으로 바꾸기
 data3 = data2.reset_index(inplace=False)
 x=[1,2,3,4,5,6,7,8,9,10,11,12]
 
+plt.figure()
+for i in range(4):
+    data4 = data3.loc[0+(i*12):11+(i*12)] # [0:11]2005.1~12월, [12:23]2006.1~12월, ...
+    print(data4)
+    # plt.plot(x,data4['count'])
+    plt.bar(data4['yearmonth'],data4['count'])
+
+
+plt.figure()
 for i in range(4):
     data4 = data3.loc[0+(i*12):11+(i*12)] # [0:11]2005.1~12월, [12:23]2006.1~12월, ...
     print(data4)
     plt.plot(x,data4['count'])
-    # plt.bar(data4['year&month'],data4['count'])
+    # plt.bar(data4['yearmonth'],data4['count'])
 
 plt.legend(['2005','2006','2007','2008'])
+
 plt.show()
 
 # data1 = pd.read_csv("daydata.csv", names=['day','data'])
