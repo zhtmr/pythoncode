@@ -1,6 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-
+import functest as ft
 # 함수화 규칙
 #  입력 데이터는 괄호안에 작성
 #  데이터의 출력은 return
@@ -29,16 +28,9 @@ maxDay=12*3
 data2 = setMonthDay(data1,maxYear*maxDay,'month','day','monthday')
 
 
-plt.show()
+
+ft.showPlot(data2,maxYear,maxDay,'monthday','data')
+
+
 
 print(data2)
-
-
-
-# for i in range(4):
-#     data3=data2.loc[0+(36*i):35+(36*i)]
-#     print(data3)
-#     plt.plot(data2['month'],data2['data']) 
-
-
-# plt.show()
