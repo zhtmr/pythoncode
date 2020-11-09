@@ -21,10 +21,10 @@
   <meta property="og:image" content="//www.seoul.go.kr/res_newseoul/images/main/seoul_bi.jpg">
   <meta property="og:url" content="https://www.seoul.go.kr">
 
-  <link rel="stylesheet"       href="/res_newseoul/css/reset.css?20201006172702">
-  <link rel="stylesheet"       href="/res_newseoul/css/jquery.bxslider.css?20201006172702">
-  <link rel="stylesheet"       href="/res_newseoul/css/common.css?20201006172702">
-  <link rel="stylesheet"       href="/res_newseoul/css/main_new.css?20201006172702">
+  <link rel="stylesheet"       href="/res_newseoul/css/reset.css?20201027173002">
+  <link rel="stylesheet"       href="/res_newseoul/css/jquery.bxslider.css?20201027173002">
+  <link rel="stylesheet"       href="/res_newseoul/css/common.css?20201027173002">
+  <link rel="stylesheet"       href="/res_newseoul/css/main_new.css?20201027173002">
   
   <link rel="stylesheet"       href="/res_newseoul/css/jquery-ui.min.css">
 
@@ -37,10 +37,10 @@
   <script src="/res_newseoul/js/jquery-3.3.1.min.js"></script>
   <script src="/res_newseoul/js/jquery-ui.min.js"></script>
 
-  <script src="/res_newseoul/js/common.js?20201006172702"></script>
-  <script src="/res_newseoul/js/script.js?20201006172702"></script>
+  <script src="/res_newseoul/js/common.js?20201027173002"></script>
+  <script src="/res_newseoul/js/script.js?20201027173002"></script>
 
-  <script src="/res_newseoul/js/comapp.js?20201006172702"></script>
+  <script src="/res_newseoul/js/comapp.js?20201027173002"></script>
 
   <!--
     자동검색완성
@@ -171,13 +171,13 @@
     "@type": "Organization",
     "name": "서울특별시청",
     "url": "https://www.seoul.go.kr",
-    "sameAs": [
-      "http://blog.naver.com/haechiseoul",
-      "https://www.instagram.com/seoul_official/",
-      "https://www.youtube.com/channel/UCZUPZW5idAxYp-Asj__lVAA",
+    "sameAs": [      
+	  "https://www.youtube.com/channel/UCZUPZW5idAxYp-Asj__lVAA",
+      "https://www.instagram.com/seoul_official/",      
       "https://story.kakao.com/ch/seoul",
       "https://www.facebook.com/seoul.kr",
-      "https://twitter.com/seoulmania"
+      "https://twitter.com/seoulmania",
+      "http://blog.naver.com/haechiseoul"	
     ]
   }
   </script>
@@ -286,10 +286,11 @@ function fnGoDevicePage(){
 		
 		var param 	= {'P_TYPE':P_TYPE, 'P_SEQ':P_SEQ};
 		
-		com.ajax({
+		$.ajax({
 			type		: "POST"
 			,url		: "/seoul/hitcount.do"
 			,data		: param
+			,dataType 	: "json"
 			,success: function(sdata){
 				return;
 			}
@@ -438,6 +439,46 @@ function fnGoDevicePage(){
 
 
 
+
+
+
+
+
+
+	<!-- serverTestContent -->
+	<!-- ######################################################################## -->
+<!-- 
+	menu name: serverTestContent
+--> 
+<!-- ######################################################################## -->
+
+
+
+
+
+<div id="divTestOnOff" style="position: relative;width:100%;text-align:center;background: orange;display:none;">
+	<section style="margin: 0 auto;padding:10px 0;">
+		<h2 id="h2TestName" style="font-size: 20px;color: #f4f6f7;font-weight: 700;"></h2>
+	</section>
+</div>
+
+
+<script>
+	var local_hostname = window.location.hostname;
+	var divTestOnOff = $("#divTestOnOff");
+	if(divTestOnOff){
+		if(local_hostname == "testwww.seoul.go.kr" || local_hostname == "127.0.0.1" || local_hostname == "localhost"){
+			divTestOnOff.show();
+			$("#h2TestName").text("로컬(개발서버)");
+			if(local_hostname == "testwww.seoul.go.kr"){
+				$("#h2TestName").text("테스트서버");
+			}
+			
+		}
+	}
+	
+</script>
+	<!-- serverTestContent -->
 
 
 
@@ -610,10 +651,11 @@ function fnGoDevicePage(){
 		
 		// get login
 		function fnGetLogin(){
-		 	com.ajax({
+		 	$.ajax({
 		 		type		: "POST"
 		 		,url		: "/seoulcom/isLogin.do"
 		 		,data		: {}
+		 		,dataType 	: "json"
 		 		,success: function(sdata){
 		 			if(sdata.isOk=='Y'){//로그인 되어있을때
 		 				$('#li_loginIn').hide();
@@ -641,6 +683,8 @@ function fnGoDevicePage(){
 
 
 <!-- SUB화면 GNB  -->
+
+
 
 
 
@@ -725,7 +769,7 @@ function fnGoDevicePage(){
                     <p>
                       <a href="http://www.kma.go.kr/aboutkma/intro/metropolitan/index.jsp?pointCode=1114055000" target="_blank" title="새창으로 이동" onclick="action_logging({tr_code:'weather'});" >
                         
-                          <strong class="deg">18.7℃</strong>
+                          <strong class="deg">18.0℃</strong>
                         
                         <span class="w_txt1">서울시&nbsp;
                 
@@ -747,10 +791,10 @@ function fnGoDevicePage(){
                       <a href="//cleanair.seoul.go.kr/main.htm#tab1_01" target="_blank" title="새창으로 이동"  onclick="action_logging({tr_code:'weather'});" >
                         <span class="w_txt2">
                           
-                            미세먼지(좋음)&nbsp;
+                            미세먼지(나쁨)&nbsp;
                           
                           
-                            초미세먼지(좋음)
+                            초미세먼지(나쁨)
                           
                         </span>
                       </a>
@@ -939,10 +983,11 @@ function fnGoDevicePage(){
     function fnCheckLocation(){
 
       var getWeather = function(param){
-        com.ajax({
+        $.ajax({
           type    : "POST"
           ,url    : "/weather/getTodayWeather.do"
           ,data    : param
+          ,dataType 	: "json"
           ,success: function(sdata){
             fnCreateWeather(sdata);
           }
@@ -998,6 +1043,7 @@ function fnGoDevicePage(){
 		  $.ajax({
 	          type    : "POST"
 	          ,url    : "/mseoulM/safe/traffic/getAccidentList.do"
+	          ,dataType 	: "json"
 	          ,success: function(sdata){
 	            if(sdata.returnList){
 	            	
@@ -1177,6 +1223,69 @@ function fnGoDevicePage(){
                   
                   
                   <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1300256" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3208');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/c1c30679db76401a900e866a0eef227c.jpg" alt="올해 핼러윈 데이는 파티 대신 온라인 비대면으로!" >
+                        <figcaption class="figcaption">올해 핼러윈 데이는 파티 대신 온라인 비대면으로!</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1300089" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3205');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/a5a8629c115a49b09753227031ea32d2.jpg" alt="서울시, 4배 빠른 무료와이파이 &#39;까치온&#39; 내달 1일 시작" >
+                        <figcaption class="figcaption">서울시, 4배 빠른 무료와이파이 '까치온' 내달 1일 시작</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1300041" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3204');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/713016f5d39b4b1c9c8bfec921f29638.jpg" alt="SEOUL Initiative 신 글로벌 시대의 도시리더쉽. The future of city leadership. 제5회 서울브랜드 글로벌 포럼. 10.28(수) 14:00~(약 4시간). 온라인 생중계_유튜브. 검색창에 서울브랜드 포럼으로 검색. 장소 : 서울온(시민청 태평홀 영상회의 스튜디오). seoulbrandforum.or.kr. 서울, 세계적인 석학들과 대담 하다. 서울, 도시 리더십의 꿈은 대담하다. 사이먼 안홀트(저서, 국가브랜드, 국가이미지), 자크 아탈리(저서, &#39;미래의 물결&#39;), 기 소르망 (저서 &#39;어느 낙관론자의 일기&#39;), 이날치 밴드" >
+                        <figcaption class="figcaption">‘서울브랜드 글로벌 포럼’ 개최... 관전 포인트 세 가지</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1299893" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3203');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/dea424aa42104f12b721b1e5c2ead7af.jpg" alt="서울시 어르신 맞춤형 스마트폰 보급 사업 대상: 만 65세 이상 서울시민 기간: 20년 10월 12일 ~ 12월 31일까지 장소: 서울 LG전자 BEST SHOP 35개점" >
+                        <figcaption class="figcaption">어르신에 맞춤형 스마트폰 보급... 디지털 격차 줄인다</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1299159" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3191');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/5b9c4cda747f4162b0f37007c32e666e.jpg" alt="세계 코로나19 현장 ‘순간포착’… 글로벌 사진전 개최" >
+                        <figcaption class="figcaption">세계 코로나19 현장 ‘순간포착’… 글로벌 사진전 개최</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1298350" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3180');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/fd2551219120415697434414027dab0e.jpg" alt="코로나19로 소득이 감소(25%이상)하여 생계가 곤란한 저소득 가구 ‘긴급생계지원’ 최대 100만원… 19일부터 현장접수" >
+                        <figcaption class="figcaption">‘긴급생계지원’ 최대 100만원… 19일부터 현장접수</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://mediahub.seoul.go.kr/archives/1297834" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3169');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/e992796c105d4d99959cbba103bd5e5d.jpg" alt="사회적 거리두기 1단계, 서울시 달라지는 방역수칙은? 감염병예방법 개정에 따른 마스크 미착용시 과태료 부과(11.13.부터) 코로나19 위기경보 심각단계 상황에 따른 마스크 의무착용 코로나19 바이러스가 확산됨에 따라 모든 분들의 안전을 위하여 &#39;반드시&#39; 마스크 착용을 부탁드립니다." >
+                        <figcaption class="figcaption">사회적 거리두기 1단계, 서울시 달라지는 방역수칙은? 감염병예방법 개정에 따른 마스크 미착용시 과태료 부과(11.13.부터)</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
                     <a href="https://www.seoul.go.kr/coronaV/coronaStatus.do?menu_code=18" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3118');"  >
                       <figure class="figure">
                         <img width="690" height="350" src="/upload/hotissue/b82498fcaae8443da2fe6b13a2c172aa.jpg" alt="코로나19 맞춤형 긴급재난지원. 코로나19 긴급지원 제도와 예상 지원금을 확인하세요!" >
@@ -1186,46 +1295,10 @@ function fnGoDevicePage(){
                   </li>
                   
                   <li>
-                    <a href="http://mediahub.seoul.go.kr/archives/1297239" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3149');"  >
+                    <a href="http://mediahub.seoul.go.kr/archives/1298178" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3183');"  >
                       <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/f1ed1b97946e4e3b956164650f9c67e4.jpg" alt="무급휴직자 최대 100만원...서울시 &#39;1만개 일자리 대책&#39;" >
-                        <figcaption class="figcaption">무급휴직자 최대 100만원...서울시 '1만개 일자리 대책'</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://mediahub.seoul.go.kr/archives/1297080" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3150');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/37dc822e53b042d6b33917349e504e31.jpg" alt="보증금 30% 무이자 지원 &#39;장기안심주택&#39; 2,500명 모집" >
-                        <figcaption class="figcaption">보증금 30% 무이자 지원 '장기안심주택' 2,500명 모집</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://mediahub.seoul.go.kr/archives/1296365" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3131');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/931b44fec2474246ae4f20e95934e9e3.jpg" alt="고덕강일·마곡에 국민임대 1,009세대 공급…입주조건은" >
-                        <figcaption class="figcaption">고덕강일·마곡에 국민임대 1,009세대 공급…입주조건은</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://mediahub.seoul.go.kr/archives/1296240" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3130');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/4de6af1cab7d493d80b50be11fcdf517.jpg" alt="&#39;사장님 공공기관과 거래하세요&#39; 서울시 공공마켓 개설" >
-                        <figcaption class="figcaption">"사장님 공공기관과 거래하세요" 서울시 공공마켓 개설</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/gov/archives/514796" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3144');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/4dd5e9edd61a4c788d4a94675d813f17.jpg" alt="집회금지 서울시 코로나19 확산 방지를 위한 서울 전역 10인 이상 집회 10월 11일까지 전면 금지" >
-                        <figcaption class="figcaption">코로나19 확산 방지를 위한 서울 전역 10인 이상 집회 10월 11일까지 전면 금지</figcaption>
+                        <img width="690" height="350" src="/upload/hotissue/1acc289bf18d4064a044b499281ce4a3.jpg" alt="틈새건축 서울건축문화제 2020ㅣ틈새건축 2020.10.16 - 10.31" >
+                        <figcaption class="figcaption">서울건축문화제 2020ㅣ틈새건축 2020.10.16 - 10.31</figcaption>
                       </figure>
                     </a>
                   </li>
@@ -1254,10 +1327,190 @@ function fnGoDevicePage(){
                 <ul class="ci_slide">
                   
                   <li>
-                    <a href="https://news.seoul.go.kr/gov/archives/515595" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3153');"  >
+                    <a href="https://news.seoul.go.kr/welfare/archives/523861" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3206');"  >
                       <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/5757e5fe663a4af1a9dc515425f5bf24.jpg" alt="훈민정음 해례본 발견 80주년 기념 훈민정음 해례본 이야기 28 날짜: 2020.9.28 ~2020.10.18 장소: 서울도서관 외벽" >
-                        <figcaption class="figcaption">한글날 기념 훈민정음 해례본 이야기 전시 </figcaption>
+                        <img width="690" height="350" src="/upload/hotissue/2a15444358e24123aaf76d4534d92397.jpg" alt="돌봄을 넘어 문화적 가치를 키우는 2020 제2호 거점형우리동네키움센터 4차 산업혁명 기반 PBL 프로젝트 공모 공모접수 2020.10.26.(월)~11.5.(목) 최종 발표 2020.11.16.(월)" >
+                        <figcaption class="figcaption">2020 제2호 거점형우리동네키움센터 4차 산업혁명 기반 PBL 프로젝트 공모</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/culture/archives/509142" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3201');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/357f2e3b78f9469f8166b3897ae47ebe.jpg" alt="서울 디지털 사회혁신지원센터 SHINY Net [온라인 진행] 디지털 기술, 사회를 말하다 - 소비를 넘어선 기술, 협업을 통한 혁신 시간 2020년 11월 25일 10:00 ~ 14:40" >
+                        <figcaption class="figcaption">디지털 기술, 사회를 말하다 <열린 컨퍼런스> 참가</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/510096" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3200');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/937b10bcdf5b4283b2158c5aa6c0cf1a.jpg" alt="HEALTH X-CHALLENGE SEOUL 헬스엑스챌린지 서울 바이오&디지털 헬스 분야 아이디어 공모전 2020.10.22.(목) ~ 11.22.(일)" >
+                        <figcaption class="figcaption">헬스엑스챌린지 서울 바이오&디지털 헬스 분야 아이디어 공모전</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/citybuild/archives/510410" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3199');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/9f198b2ed19c4f31a8c87e6cb5fd694c.jpg" alt="2020 서울도시건축 프리비엔날레 The Pre Biennale of SBAU 2020.10.29.THU ~ 30.FRI" >
+                        <figcaption class="figcaption">2020 서울도시건축 프리비엔날레 </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/culture/archives/509119" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3197');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/0689dbda4d2944b4addfc10169fd678f.jpg" alt="DSI JAM SEOUL-IEUM FESTIVAL 일시 : 10월30일~11월1일, 장소 : 서울도서관 디지털사회혁신센터(서울도서관 1f) 디지털 사회혁신 잼. Digital Social Innovation. JAM in Festival! 일상의 문제해결 내 손에서 시작!" >
+                        <figcaption class="figcaption">디지털 사회혁신 잼(Digital Social Innovation Jam) 안내</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515868" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3194');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/d8167ef0dac2482ca26d68729ac5a2b3.jpg" alt="주민자치주간 및 지방자치의 나라 기념 자치분권 온라인 특강 코로나 이후의 지방자치 미래는? 지방분권에서 답을 찾다! 2020.10.29(목) 15:00~17:00(120분) 대상 : 지방분권에 관심이 있는 시민, 방법 : 서울시 유튜브 중계" >
+                        <figcaption class="figcaption">(10.29 서울시 자치분권 온라인 특강) 코로나 이후 지방자치의 미래는? 지방분권에서 답을 찾다!</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/welfare/archives/523729" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3193');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/0046d75ded4d42e0885cf9e714fc9836.jpg" alt="코로나시대, 지속가능한 먹거리 2020 서울 먹거리문화 축제. 2020.10.26(월)~10.31(토)까지" >
+                        <figcaption class="figcaption">2020 서울먹거리문화축제</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/gov/archives/515835" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3192');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/91f14ed8e493438892e3b77897dc0825.jpg" alt="기준의 재구성 2020 서울청년정책네트워크 프로젝트. 프로젝트 진행일 : 10월21일~11월15일" >
+                        <figcaption class="figcaption">서울청년정책네트워크 프로젝트 공론장 개최 안내</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/culture/archives/509034" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3190');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/61fbe56349d046ba964c25988ef8ab3a.jpg" alt="핫둘핫둘서울 소식. 서울시와 함께 걷기! 자치구별 비대면 서울걷길 행사에 참여하세요!" >
+                        <figcaption class="figcaption">서울시와 함께 걷기! 자치구별 비대면 서울걷길 행사에 참여하고 상품도 받아가세요! (우리 구는 어떤 행사를?!)</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/env/archives/509082" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3189');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/1823c3086cb844a2824ecf618401a832.jpg" alt="재생에너지 문화축제 동네 그린에너지가 희망이다 다양하고 재밌는 프로그램 참여를 통해 재생에너지와 제로에너지에 대해 알아보아요! 기간: 온라인 2020년 10월 12일(월) ~ 11월 13일(금) 홈페이지 www,seouledcfesta.or.kr" >
+                        <figcaption class="figcaption">재생에너지 문화축제 동네 그린에너지가 희망이다 온라인으로 만나요</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/citybuild/archives/510286" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3187');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/b19a45a864474c7a874b06fea91647ba.jpg" alt="서울청년월세지원 정책포럼. 청년의 주거권 보장을 위한 발전 방향. 2020.11.12 목, 15:00~17:00 실식간방송(댓글참여)" >
+                        <figcaption class="figcaption">청년월세지원 온라인 정책포럼 11월12일 3시 개최</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/welfare/archives/523600" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3181');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/4eba35975a52487cb00f9ed6823669b8.jpg" alt="서울시 월경공감 캠페인 나의 일상? 나의 월경! 코로나19가 바꾼 나의 월경 이야기를 들려주세요! 캠페인 기간 : 10월18일(일)~11월14일(토), 참가대상 : 여성건강과 월경에 관심있는 누구나, 증정품 : 건강한 월경을 위한 Kit. 재택근무, 스트레스, 육아, 집콕" >
+                        <figcaption class="figcaption">코로나19가 바꾼 우리의 일상! 나의 월경은? 서울시, 월경공감 캠페인 </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/economy/archives/509995" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3178');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/a4629136d87d41ec99bd56825e28fa2a.jpg" alt="제24회 서울국제만화애니메이션페스티벌 The 24th Seoul International Cartoon & Animation Festival 2020.11.11.-15. 클릭! 온라인 놀이터 개장!" >
+                        <figcaption class="figcaption">제24회 서울국제만화애니메이션페스티벌(2020 SICAF)</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515691" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3177');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/2900f968aa1348d7bc3f1d5109406351.png" alt="2020 서울 공론화 서울시민이 배출한 쓰레기, 어떻게 처리할 것인가? 일시 1차 숙의: 2020.10.18(일) 13:30 ~18시 2차숙의: 2020.11.1(일) 13:30~18시" >
+                        <figcaption class="figcaption">2020 서울 공론화 서울시민이 배출한 쓰레기, 어떻게 처리할 것인가?</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/culture/archives/508857" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3176');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/02e8b66c181a4002ac420124030e24e7.jpg" alt="2020 서울디자인 국제포럼 개최 SEOUL DESIGN INTERNATIONAL FORUM 유니버설 디자인 11. 5.(목) 사회문제해결디자인 11. 6.(금) 코로나 이후 새로운 도시 디자인 New Design City Responding to Post-COVID" >
+                        <figcaption class="figcaption">2020 서울디자인 국제포럼을 개최합니다. </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/economy/archives/509885" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3173');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/e27edf33296f4c46834e49bc913f9de9.jpg" alt="Make cities better, make citizens happier 서울글로벌챌린지 2021. 도전과제 : 지하철 미세먼지 저감 및 공기질 개선. 상금 총 6억9천만원. 기술경연: 2020.10.14~12.31(18시까지). 학술경연: 학회별 홈페이지 별도 안내 예정. * 상기 금액은 21년 예산 편성에 따라 변경될 수 있음" >
+                        <figcaption class="figcaption">서울글로벌챌린지 2021 개최</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="http://news.seoul.go.kr/gov/archives/515714" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3171');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/28072e5a166d4fbfb379bd8ecb0d42f0.jpg" alt="2020 서울시 인권포럼 비대면시대, 아이들을 안전하게 돌보려면? 2020.10.27(화) 13:30 ~ 15:30" >
+                        <figcaption class="figcaption">2020 서울시 인권포럼 개최</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509939" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3167');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/3b5ca52317fd4a8395e65baaae21573b.jpg" alt="2020 전태일 50주기 기념사업 우리모두 전태일문화제 2020.10.14.(수) ~ 11.15.(일) www.taeil50.org" >
+                        <figcaption class="figcaption">2020 우리모두 전태일문화제</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/env/archives/508684" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3164');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/1b9c517e03ba41e59a8ee3f2e9049090.jpg" alt="용산공원의 푸른 이야기를 부탁해! 용산공원 청년크리에이터 모집 10.12(월) ~ 10.30(금)" >
+                        <figcaption class="figcaption">용산공원 청년 기자단 10월12일부터 모집</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/env/archives/508645" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3163');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/c17e446c81b443eca7f554a692b50444.jpg" alt="서울식물원과 함께한 모든 순간 2020 서울식물원 SNS 콘텐츠 공모전(사진,슬로건) 2020.10.8(목)~11.7(토)" >
+                        <figcaption class="figcaption">서울식물원 SNS 콘텐츠 공모전</figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://news.seoul.go.kr/economy/archives/509656" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3154');"  >
+                      <figure class="figure">
+                        <img width="690" height="350" src="/upload/hotissue/2f239673dc1d4290b6aa9d7b17006c42.jpg" alt="상가 생존을 위한 상생Zone을 함께 만들어가요! 코로나19 극복을 위한 상생Zone 이벤트 참여기간 2020.10.07~10.28 당첨자 발표 2020.11.04" >
+                        <figcaption class="figcaption">상가 생존을 위한 상생Zone을 함께 만들어가요!</figcaption>
                       </figure>
                     </a>
                   </li>
@@ -1272,64 +1525,10 @@ function fnGoDevicePage(){
                   </li>
                   
                   <li>
-                    <a href="https://news.seoul.go.kr/env/archives/508602" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3147');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/ccddb20676f448e79552516e82b3b7c0.png" alt="서울식물원 온라인 가을축제 &#39;식물원을 빌려드립니다&#39; 크리에이터 모집. 2020.9.29~10.11" >
-                        <figcaption class="figcaption">'식물원을 빌려드립니다' 크리에이터를 찾습니다!</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/welfare/archives/523337" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3148');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/e8c1dfd88d174ba88396e16192c74010.jpg" alt="뜨거운 외침, 성별임금격차에 대한 응답. &#39;서울시 성평등임금공시&#39; 모델 확산을 위한 토론회. 2020. 10. 8(목) 오후 2시, 유튜브(서울시, TBS채널) 실시간 중계" >
-                        <figcaption class="figcaption">'서울시 성평등임금공시' 모델 확산을 위한 토론회 개최</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/env/archives/508565" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3135');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/ebbcb58800dc43729ff98ff6fa8c480c.jpg" alt="2020 서울시 녹색중소기업 녹색제품 온라인 기획전 G마켓(국내), EC21(국외) &#39;20.10.5.(월) ~ 10.25.(일) / 3주" >
-                        <figcaption class="figcaption">2020 서울시 녹색중소기업 "녹색제품 온라인 기획전"</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/citybuild/archives/510063" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3143');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/a99b274babcf4879b89d6f65d6df0266.jpg" alt="2020.10.05.(월) - 10.18.(일) 총 5,500만원 지원! 세원상가군 시제품 제작 지원사업 2020 세운메이드 세운메이드란? 세운·청계로·을지로의 도심제조업 활성화를 위한 시제품 제작지원 프로젝트입니다. 문의 02-2273-5515 세운 지원센터" >
-                        <figcaption class="figcaption">2020 세운메이드</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/culture/archives/508406" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3141');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/06e2d45e7ea340d7bd1f1a30393f51f5.jpg" alt="서울디자인창업센터 2기 입주기업 모집 서울디자인재단이 청년창업을 지원합니다" >
-                        <figcaption class="figcaption">서울디자인창업센터 2기 입주기업 모집</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
                     <a href="http://news.seoul.go.kr/gov/archives/515406" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3140');"  >
                       <figure class="figure">
                         <img width="690" height="350" src="/upload/hotissue/a2d94bcbe1f4468d80da4c135f3c618a.jpg" alt="2020 민주주의 서울 유튜브 영상 공모전 민서야 보고싶어! 9.28.(월) ~ 11.4(수) 18:00 마감 민주주의 서울(민서)이란? 시민이 스스로 일상의 문제를 제안하고 서울시와 함께 토론해서 정책을 만들어가는 서울시의 대표 시민참여 플랫폼입니다." >
                         <figcaption class="figcaption">2020 민주주의 서울 유튜브 영상 공모전(민서야 보고싶어!)</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/gov/archives/515385" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3138');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/9aadb4a5a56c42dfb494a134322646c6.jpg" alt="2020년도 행정사무감사 대비 시민제보를 받습니다! 서울시정 및 교육행정 전반에 걸쳐 위법, 부당한거나 개선이 필요하다고 느끼신 사항을 제보하여 주시면 행정사무감사에 적극 반영하도록 하겠습니다. 제보기간 : 2020. 9. 25(금) ~ 10. 24(토), 참여방법 : 서울특별시의회 홈페이지 공지사항 참조, 문의 : 02) 2180-7882 바로가기" >
-                        <figcaption class="figcaption">2020년도 행정사무감사 대비 시민제보를 받습니다!</figcaption>
                       </figure>
                     </a>
                   </li>
@@ -1344,73 +1543,10 @@ function fnGoDevicePage(){
                   </li>
                   
                   <li>
-                    <a href="http://news.seoul.go.kr/culture/archives/508414" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3133');"  >
+                    <a href="http://news.seoul.go.kr/env/archives/509224" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3202');"  >
                       <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/4ac123c6fc184890a4260a998a8497a8.jpg" alt="2020 서울관광대상 서울관광 발전에 기여한 공로자들을 찾습니다." >
-                        <figcaption class="figcaption">2020 서울관광대상 수상자 모집</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://news.seoul.go.kr/gov/archives/515214" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3132');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/fda3d8f73f314300a5cf988447e90504.jpg" alt="코로나19로 인한 돌봄 서비스 공백해소를 위해 우리동네키움센터는 어떻게 변화해야 할까요? 서울시가 묻습니다. 2020년 9월22일~10월21일" >
-                        <figcaption class="figcaption">코로나19로 인한 돌봄 서비스 공백해소를 위해 우리동네키움센터는 어떻게 변화해야 할까요?</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/economy/archives/509333" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3117');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/512e4b2e616a47cf8d947347246fc1f8.png" alt="청정지역 프로젝트 시즌2 청년 참여자 추가모집 9.15(화) ~ 10.8(목) 18:00 공식홈페이지 접수 www.youthstay2.org #지역에서 #만나는 #새로운 나" >
-                        <figcaption class="figcaption">청정지역 프로젝트 시즌2 참여청년 추가모집</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/gov/?p=515055&preview=true" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3108');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/d3e822f2aa454a00a50e3e4abf5c00bc.jpg" alt="2020 서울서베이 실시 본 조사 9월 14일 ~ 10월 13일 보완 조사 10월 14일 ~ 10월 31일" >
-                        <figcaption class="figcaption">2020 서울서베이 실시 안내</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/economy/archives/509180#scrap" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3107');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/6fb2b6320ee145d7bb674b252ff7fdd8.jpg" alt="국내최초 산업단지 舊구로공단의 산업유산을 구입합니다 G밸리 산업관(가칭) 자료구입 3차 접수기간 2020년 9월 10일(목) ~ 10월 7일(수) 구입대상 舊구로공단 조성·발전 자료 및 경제개발계획 자료, 산업제품/기기류, 근로자·기업인 기록류 등" >
-                        <figcaption class="figcaption">(舊)구로공단 역사 자료를 구입합니다. </figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://news.seoul.go.kr/gov/archives/514570" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3062');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/798771d4f57846409c8114bbdb14ba2d.png" alt="청년 금융 자립을 위한 청년 미래투자 금융지원 &#39;서울청년 징검다리 대출&#39; 기간 : 8.18(화)~예산 소진시까지. 2, 3금융 대출 보유한 서울청년이라면 필독" >
-                        <figcaption class="figcaption">청년 미래투자 금융지원 서울청년 징검다리 대출</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="https://news.seoul.go.kr/welfare/archives/523031" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3137');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/8c24818a080440ed87c9ace8c8943efa.jpg" alt="성평등한 집콕 명절 보내고 제로페이 받자! 이벤트1. 성평등한 집콕 명절 &#39;함께 맞혀요!&#39; 이벤트2. 성평등한 집콕 명절 &#39;함께 찍어요!&#39; 이벤트 기간 | 2020.09.28 - 20.10.11 당첨자 발표 | 2020.10.16 참여하기" >
-                        <figcaption class="figcaption">서울시 성평등한 집콕명절 시민참여 캠페인</figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="http://news.seoul.go.kr/gov/archives/515259" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3139');"  >
-                      <figure class="figure">
-                        <img width="690" height="350" src="/upload/hotissue/6d198ec522154ed588f4175d961438da.png" alt="2020 서울청년학회 젊은 연구활동가 교류의 장.  언제 2020년 10월 15일(목) ~ 17일(토) 어디서 유튜브 생중계, 줌 화상회의 등 신청 http://bit.ly/2020youthcon " >
-                        <figcaption class="figcaption">2020 서울청년학회 개최 안내 </figcaption>
+                        <img width="690" height="350" src="/upload/hotissue/42a2698faf734e6fab54f433437103c6.jpg" alt="서울시 상수도 관망세척 기술경진대회 개최 2020.10.29.(목)~10.30.(금)" >
+                        <figcaption class="figcaption">서울시 상수도 관망세척 기술경진대회 개최</figcaption>
                       </figure>
                     </a>
                   </li>
@@ -1441,12 +1577,12 @@ function fnGoDevicePage(){
 						 <!-- <img src="/res_newseoul/images/main/bg_corona_pc_0810.jpg" alt="코로나19 현황. 발생동향 전체보기" > 교통정보 있을 때 -->
 						 <!-- <img src="/res_newseoul/images/main/bg_corona_pc_0826.jpg" alt="코로나19 현황. 발생동향 전체보기" > 교통정보 + 배너 -->
 							<div class="input-lists">
-							 <span class="result0"><em class="sr-only">날짜 기준 : </em>'20.10.06.00시 기준</span>   <!-- 수정 날짜기준 -->
-								<span class="result1 result1"><em class="sr-only">서울시 확진자 : </em>5,410</span>        <!-- 확진자 서울시 -->
-								<span class="result2 result2-1"><em class="sr-only">서울시 추가 확진자 : </em>15</span>      <!-- 추가확진자 총합 -->
-								<span class="result3 result3-1"><em class="sr-only">서울시 퇴원 : </em>4,584</span>        <!--퇴원 서울시 -->
-								<span class="result3 result3-2"><em class="sr-only">서울시 추가 퇴원 : </em>109</span>      <!--추가퇴원 서울시-->
-								<span class="result4 result4"><em class="sr-only">서울시 사망 : </em>61</span>            <!--사망 서울시 -->
+							 <span class="result0"><em class="sr-only">날짜 기준 : </em>'20.10.27.00시 기준</span>   <!-- 수정 날짜기준 -->
+								<span class="result1 result1"><em class="sr-only">서울시 확진자 : </em>5,851</span>        <!-- 확진자 서울시 -->
+								<span class="result2 result2-1"><em class="sr-only">서울시 추가 확진자 : </em>24</span>      <!-- 추가확진자 총합 -->
+								<span class="result3 result3-1"><em class="sr-only">서울시 퇴원 : </em>5,394</span>        <!--퇴원 서울시 -->
+								<span class="result3 result3-2"><em class="sr-only">서울시 추가 퇴원 : </em>18</span>      <!--추가퇴원 서울시-->
+								<span class="result4 result4"><em class="sr-only">서울시 사망 : </em>76</span>            <!--사망 서울시 -->
 							</div>
 						</a>
 					</figure>
@@ -1572,7 +1708,7 @@ function fnGoDevicePage(){
           
         
             
-          <li><a href="http://mediahub.seoul.go.kr/corona19/index.php?scstop=support" onclick="fnMainHitClick('sidebanner1','36');"><img src="/upload/imgBanner/IMGBANNER_20200414113349_25889.jpg" alt="한눈에 보는 코로나19 생활경제 지원 정책"></a></li>
+          <li><a href="https://news.seoul.go.kr/welfare/archives/521566" onclick="fnMainHitClick('sidebanner1','46');"><img src="/upload/imgBanner/IMGBANNER_20201012152836_59405.jpg" alt="코로나19 확산방지를 위한 사회적 거리두기 조정된 1단계 실시"></a></li>
           
                    
           
@@ -1613,13 +1749,58 @@ function fnGoDevicePage(){
                     
                     
                     
+                    <b class="p_env">환경</b>
                     
-                    <b class="p_cul">문화</b>
                     
                     
                   
 
-                  <a href="//news.seoul.go.kr/culture/archives/508330"  onclick="action_logging({tr_code:'event'});" >2020 서울미래유산 클립영상 공모전 연장공고</a>
+                  <a href="//news.seoul.go.kr/env/archives/508645"  onclick="action_logging({tr_code:'event'});" >서울식물원과 함께한 모든 순간! SNS 콘텐츠(사진, 슬로건) 공모전</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    <b class="p_env">환경</b>
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/env/archives/508684"  onclick="action_logging({tr_code:'event'});" >용산공원 청년 기자단 모집(10.12~10.30)</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    <b class="p_env">환경</b>
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/env/archives/509045"  onclick="action_logging({tr_code:'event'});" >용산공원 네이밍 공모전(10.19~12.04)</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    <b class="p_env">환경</b>
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/env/archives/509062"  onclick="action_logging({tr_code:'event'});" >용산기지 사진 공모전(10.19~12.04)</a>
                 </li>
               
                 <li>
@@ -1629,57 +1810,12 @@ function fnGoDevicePage(){
                     
                     
                     
-                    <b class="p_cul">문화</b>
                     
                     
+                    <b class="p_work">행정</b>
                   
 
-                  <a href="//news.seoul.go.kr/culture/archives/508383"  onclick="action_logging({tr_code:'event'});" >서울도서관, 디지털 교육을 쉽게, 함께! &lt;Digital Light&gt; 1차시 참가자 모집</a>
-                </li>
-              
-                <li>
-                  
-                    
-                    
-                    
-                    
-                    
-                    <b class="p_cul">문화</b>
-                    
-                    
-                  
-
-                  <a href="//news.seoul.go.kr/culture/archives/508406"  onclick="action_logging({tr_code:'event'});" >서울디자인창업센터 2기 입주기업 모집</a>
-                </li>
-              
-                <li>
-                  
-                    
-                    
-                    
-                    <b class="p_eco">경제</b>
-                    
-                    
-                    
-                    
-                  
-
-                  <a href="//news.seoul.go.kr/economy/archives/509665"  onclick="action_logging({tr_code:'event'});" >개발자 데뷔 코스 싹(SSAC), SW 교육생 모집</a>
-                </li>
-              
-                <li>
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    <b class="p_wel">복지</b>
-                    
-                  
-
-                  <a href="//news.seoul.go.kr/welfare/archives/522969"  onclick="action_logging({tr_code:'event'});" >2020년 청각장애인 인공달팽이관 소모품 구입비 지원자 추가모집 안내</a>
+                  <a href="//news.seoul.go.kr/gov/archives/515812"  onclick="action_logging({tr_code:'event'});" >(온라인으로 만나는) 자치분권대학 서울캠퍼스 수강생 모집</a>
                 </li>
               
           </ul>
@@ -1690,36 +1826,6 @@ function fnGoDevicePage(){
         <section class="board_area3 mgn">
               <h2>이달의 행사 및 축제</h2>
               <ul>
-              
-                <li>
-                  
-                    
-                    
-                    
-                    
-                    
-                    <b class="cate p_cul">문화</b>
-                    
-                    
-                  
-
-                  <a href="//news.seoul.go.kr/culture/archives/506224" onclick="action_logging({tr_code:'month'});" >&#39;문화로 토닥토닥&#39; 추석 연휴 &lt;온라인 문화예술 프로그램&gt; 안내</a>
-                </li>
-              
-                <li>
-                  
-                    
-                    
-                    
-                    
-                    
-                    <b class="cate p_cul">문화</b>
-                    
-                    
-                  
-
-                  <a href="//news.seoul.go.kr/culture/archives/507012" onclick="action_logging({tr_code:'month'});" >사회적 거리두기 강화에 따른 &lt;서울시 문화시설 휴관&gt; 안내</a>
-                </li>
               
                 <li>
                   
@@ -1763,7 +1869,37 @@ function fnGoDevicePage(){
                     
                   
 
-                  <a href="//news.seoul.go.kr/culture/archives/508539" onclick="action_logging({tr_code:'month'});" >2020 서울역사박물관 학술대회 &#39;모두를 위한 박물관&#39; 개최!</a>
+                  <a href="//news.seoul.go.kr/culture/archives/508857" onclick="action_logging({tr_code:'month'});" >2020 서울디자인 국제포럼을 개최합니다.</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    <b class="cate p_house">주택</b>
+                    
+                    
+                    
+                    
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/citybuild/archives/510315" onclick="action_logging({tr_code:'month'});" >2020 루시 아시아 도시조명 워크숍</a>
+                </li>
+              
+                <li>
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    <b class="cate p_wel">복지</b>
+                    
+                  
+
+                  <a href="//news.seoul.go.kr/welfare/archives/523729" onclick="action_logging({tr_code:'month'});" >랜선타고 시민과 함께하는 &#39;서울먹거리문화축제&#39;에 참여해주세요</a>
                 </li>
               
 
@@ -1787,13 +1923,13 @@ function fnGoDevicePage(){
               
                 <li title="내손안에서울"><a href="https://mediahub.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">내손안에서울</a></li>
               
-                <li title="서울청년포털"><a href="https://youth.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울청년포털</a></li>
+                <li title="공공서비스예약"><a href="https://yeyak.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">공공서비스예약</a></li>
               
                 <li title="서울부동산정보광장"><a href="http://land.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울부동산정보광장</a></li>
               
-                <li title="에코마일리지"><a href="https://ecomileage.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">에코마일리지</a></li>
-              
                 <li title="서울스마트 불편신고"><a href="https://smartreport.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울스마트 불편신고</a></li>
+              
+                <li title="서울청년포털"><a href="https://youth.seoul.go.kr" target="blank" onclick="action_logging({tr_code:'bookmark'});">서울청년포털</a></li>
               
               <!--
             <li><a href="http://botanicpark.seoul.go.kr/" target="_blank">서울식물원</a></li>
@@ -1874,13 +2010,13 @@ function fnGoDevicePage(){
                     
                     
                   
-                  <a href="//news.seoul.go.kr/culture/archives/508593" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/culture/archives/508909" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/09/culture_news0929.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/09/5f6b13f3ccac91.29275410.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">서울시 시립체육시설 운영 재개 및 방역 안내</p>
+                <p class="tit">코로나로 지친 시민 응원! &lt;문화로 토닥토닥&gt; 프로그램 안내</p>
               </a>
                 
           
@@ -1920,19 +2056,19 @@ function fnGoDevicePage(){
                     
                     
                     
-                    <h3 class="p_eco">경제</h3>
                     
                     
                     
+                    <h3 class="p_wel">복지</h3>
                     
                   
-                  <a href="//news.seoul.go.kr/economy/archives/509437" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/welfare/archives/523643" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/economy/files/2020/09/5f6193d5067213.80438493.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/welfare/files/2020/10/welfare_news1019.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">서울사랑상품권으로 배달주문도 한다고? 제로배달 유니온 사용설명서</p>
+                <p class="tit">2020 서울여성공예창업대전 개최 안내(10.29~11.4)</p>
               </a>
                 
           
@@ -1971,20 +2107,20 @@ function fnGoDevicePage(){
                   
                     
                     
+                    <h3 class="p_house">주택</h3>
                     
                     
                     
                     
                     
-                    <h3 class="p_work">행정</h3>
                   
-                  <a href="//news.seoul.go.kr/gov/archives/515463" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/citybuild/archives/510286" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/gov/files/2020/09/5f719d143fd2229997794d00.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/citybuild/files/2020/10/env_news1020-1.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">추석 연휴 後 시 청사 집중방역기간 운영</p>
+                <p class="tit">서울 청년월세지원 온라인 정책포럼 11월12일 오후3시 개최</p>
               </a>
                 
           
@@ -2026,17 +2162,17 @@ function fnGoDevicePage(){
                     
                     
                     
-                    <h3 class="p_cul">문화</h3>
                     
                     
+                    <h3 class="p_work">행정</h3>
                   
-                  <a href="//news.seoul.go.kr/culture/archives/507529" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/gov/archives/515779" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/07/culture_news0721.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/gov/files/2020/10/5f8d2c9d718b43.62037676.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">&lt;서울시 문화시설 운영 재개&gt; 안내</p>
+                <p class="tit">코로나19, 글로벌  포토저널리즘 사진전(2020 서울, 다시 품은 희망)</p>
               </a>
                 
           
@@ -2075,20 +2211,20 @@ function fnGoDevicePage(){
                   
                     
                     
+                    <h3 class="p_house">주택</h3>
                     
                     
                     
                     
-                    <h3 class="p_wel">복지</h3>
                     
                   
-                  <a href="//news.seoul.go.kr/welfare/archives/522756" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/citybuild/archives/510284" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/welfare/files/2020/09/welfare_news0916.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/citybuild/files/2020/10/citybuild_news1019.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">서울시 공공야간약국 지정 운영 안내</p>
+                <p class="tit">코로나는 잊고, 주민은 잇고…서울역 일대 `2020 서울로 잇다 페스티벌`</p>
               </a>
                 
           
@@ -2129,18 +2265,18 @@ function fnGoDevicePage(){
                     
                     
                     
-                    <h3 class="p_env">환경</h3>
                     
+                    <h3 class="p_cul">문화</h3>
                     
                     
                   
-                  <a href="//news.seoul.go.kr/env/archives/508399" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/culture/archives/509149" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/env/files/2020/09/env_news0917.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/10/culture_news1027.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">2020 서울억새축제 취소 및 하늘공원 한시적 폐쇄 안내</p>
+                <p class="tit">서울시, 서울미식 안내서 `서울 레스토랑&amp;바 100선` 발굴</p>
               </a>
                 
           
@@ -2181,18 +2317,18 @@ function fnGoDevicePage(){
                     
                     
                     
+                    <h3 class="p_env">환경</h3>
                     
-                    <h3 class="p_cul">문화</h3>
                     
                     
                   
-                  <a href="//news.seoul.go.kr/culture/archives/507692" onclick="action_logging({tr_code:'section_news'});" >
+                  <a href="//news.seoul.go.kr/env/archives/508878" onclick="action_logging({tr_code:'section_news'});" >
                       <div class="img_area">
                         <p class="img">
-                          <img class="newsImage" src="//news.seoul.go.kr/culture/files/2020/09/5f6b13f3ccac91.29275410.jpg" alt="">
+                          <img class="newsImage" src="//news.seoul.go.kr/env/files/2020/10/env_news1015.jpg" alt="">
                         </p>
                       </div>
-                <p class="tit">코로나로 지친 시민 응원! &lt;문화로 토닥토닥&gt; 프로그램 안내</p>
+                <p class="tit">관악산·북한산 신선한 공기 도심으로…서울시 `바람길 숲` 첫 조성</p>
               </a>
                 
           
@@ -2217,9 +2353,9 @@ function fnGoDevicePage(){
         <section class="board_area1">
               <h2>서울영상</h2>
           <div class="img_area">
-            <a href="https://www.youtube.com/watch?v=_LAGqOREImA" target="_blank" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=seoulnow_mediahub',location.href);" >
-              <p class="img"><img src="/upload/usfulInfo/USFUL_20200918110124_22347.jpg" alt=""></p>
-              <p class="txt">[서울집콕 360VR]ㅣ노을야경이 아름다운 노들섬에서 VR로 힐링하기~</p>
+            <a href="https://youtu.be/tXXjSm4UdNc" target="_blank" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=seoulnow_mediahub',location.href);" >
+              <p class="img"><img src="/upload/usfulInfo/USFUL_20201012140802_74864.jpg" alt=""></p>
+              <p class="txt">서울광장에 #핑크퐁과 #아기상어가 나타났다!! #참_고마워요!!</p>
             </a>
               </div>
           <h2 style="margin-top: -43px;margin-left: 300px;">서울소식</h2>
@@ -2237,7 +2373,7 @@ function fnGoDevicePage(){
                           
                         
                         <a href="//www.seoul.go.kr/news/news_notice.do"><b>고시공고</b></a>
-                        <a href="//www.seoul.go.kr/news/news_notice.do#view/325558"  onclick="action_logging({tr_code:'seoulnow_notice'});" >2020년 북촌 주민공모지원사업 선정결과 공고</a>
+                        <a href="//www.seoul.go.kr/news/news_notice.do#view/326694"  onclick="action_logging({tr_code:'seoulnow_notice'});" >종합공사시공업 등록 공고</a>
                       </li>
             
                       <li>
@@ -2251,7 +2387,7 @@ function fnGoDevicePage(){
                           
                         
                         <a href="//www.seoul.go.kr/news/news_tender.do"><b>입찰공고</b></a>
-                        <a href="//www.seoul.go.kr/news/news_tender.do#view/325543"  onclick="action_logging({tr_code:'seoulnow_tender'});" >사전규격 공개 SID 수변생태·여가문화공간 통합관리방안 연구용역</a>
+                        <a href="//www.seoul.go.kr/news/news_tender.do#view/326657"  onclick="action_logging({tr_code:'seoulnow_tender'});" >노원자원회수시설 운영 민간위탁사업자 모집공고</a>
                       </li>
             
                       <li>
@@ -2265,7 +2401,7 @@ function fnGoDevicePage(){
                           
                         
                         <a href="//www.seoul.go.kr/news/news_employ.do"><b>채용시험</b></a>
-                        <a href="//www.seoul.go.kr/news/news_employ.do#view/325557"  onclick="action_logging({tr_code:'seoulnow_employ'});" >2020년도 서울특별시 지방공무원 제3회 공개경쟁 및 경력경쟁 임용시험 필기시험 일시 및 장소공고</a>
+                        <a href="//www.seoul.go.kr/news/news_employ.do#view/326669"  onclick="action_logging({tr_code:'seoulnow_employ'});" >재단법인 서울특별시 미디어재단 티비에스TBS 기간제 직원 채용 공고</a>
                       </li>
             
                       <li>
@@ -2279,7 +2415,7 @@ function fnGoDevicePage(){
                           
                         
                         <a href="//www.seoul.go.kr/news/news_report.do"><b>보도자료</b></a>
-                        <a href="//www.seoul.go.kr/news/news_report.do#view/325552"  onclick="action_logging({tr_code:'seoulnow_report'});" >서울시-전남도 유통비용 절감 `공영시장도매인제` 가락시장에 도입</a>
+                        <a href="//www.seoul.go.kr/news/news_report.do#view/326679"  onclick="action_logging({tr_code:'seoulnow_report'});" >서울시사회서비스원 동작구와 코로나19 긴급돌봄업무협약 체결</a>
                       </li>
             
             </ul>
@@ -2313,6 +2449,34 @@ function fnGoDevicePage(){
                        
                          
                            
+                             <a href="http://www.army.mil.kr/isrs/pts/apply/pts_apply_gate.jsp" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2014" width="355" height="122" src="/upload/popupZone/8680b12b3d164d8e88b3c7e24d2a869e.jpg" alt="2012년 예비군 간부 비상근 복무자 모집 2020. 9. 28. ~ 11. 1.(5주)">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="http://news.seoul.go.kr/economy/certified_labor" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2013" width="355" height="122" src="/upload/popupZone/ee0b5c7049b54b30bf0a39bcb7a7d234.jpg" alt="찾아가는 무료 노무컨설팅 서울시 마을노무사. 서울시가 위촉한 공인노무사가 사업장을 직접 방문해 무료 노무컨설팅을 제공합니다.">
+                             </a>
+                           
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
                              <a href="http://seoulon.or.kr" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
                                <img data-cu-seq="2012" width="355" height="122" src="/upload/popupZone/24d6daf54dd44c1caa21c9641200a575.jpg" alt="서울에 온을 더하다! 서울온(화상회의스튜디오) 운영">
                              </a>
@@ -2328,63 +2492,7 @@ function fnGoDevicePage(){
                          
                            
                              <a href="https://www.kcomwel.or.kr/kcomwel/paym/join/targ.jsp" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
-                               <img data-cu-seq="2011" width="355" height="122" src="/upload/popupZone/e59c139c13904e11a5b9b87b2ace570b.jpg" alt="근로자가 1명이라도 있다면? 고용？산재보험 가입 꼭 이야!">
-                             </a>
-                           
-                           
-                         
-                       
-                </li>
-              
-                <li>
-                  
-                       
-                         
-                           
-                             <a href="https://www.instagram.com/p/CFcSOXeHEYM/?igshid=1ol47937smuq7" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
-                               <img data-cu-seq="2008" width="355" height="122" src="/upload/popupZone/62d75c7521b347f6a97d3a7df66985e6.jpg" alt="인도네시아 독립 75주년 기념 온라인 러닝 대회(INDONESIA IN KOREA VIRTUAL RACE 2020)">
-                             </a>
-                           
-                           
-                         
-                       
-                </li>
-              
-                <li>
-                  
-                       
-                         
-                           
-                             <a href="http://ksm.or.kr/ksm_pyongyangschool.html" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
-                               <img data-cu-seq="2007" width="355" height="122" src="/upload/popupZone/6597885058434e91b9535173dced73a5.jpg" alt="평양여행학교(Pyongyang Travel School) 참가신청서 작성하기">
-                             </a>
-                           
-                           
-                         
-                       
-                </li>
-              
-                <li>
-                  
-                       
-                         
-                           
-                             <a href="https://www.krcert.or.kr/webprotect/pcSecCheck.do" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
-                               <img data-cu-seq="2006" width="355" height="122" src="/upload/popupZone/65e68d2a9e804ad68db4e0a6042488f2.jpg" alt="PC원격 보안점검 내 PC 돌보미 코로나19로 인한 재택근무와 원격수업! 무료점검 받아보세요!!">
-                             </a>
-                           
-                           
-                         
-                       
-                </li>
-              
-                <li>
-                  
-                       
-                         
-                           
-                             <a href="https://nip.cdc.go.kr/irgd/index.do?service=getPopMedicalCenterList&SelFlag=RPM" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
-                               <img data-cu-seq="2004" width="355" height="122" src="/upload/popupZone/41daa7c50eab4be7b92d488269dc6433.jpg" alt="독감예방접종 의료기관 안내">
+                               <img data-cu-seq="2011" width="355" height="122" src="/upload/popupZone/e59c139c13904e11a5b9b87b2ace570b.jpg" alt="근로자가 1명이라도 있다면? 고용？산재보험 가입 꼭 이야! 문의 1588-0075">
                              </a>
                            
                            
@@ -2516,6 +2624,20 @@ function fnGoDevicePage(){
                            
                            
                              <a href="http://cis.seoul.go.kr" target="_blank"><img data-cu-seq="1941" width="355" height="122" src="/upload/popupZone/97c1735ff9604e019c9eca41b8417c06.jpg" alt="서울시 건설공사의 모든 것. 내 집앞 공사가 궁금하세요?" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);"></a>
+                           
+                         
+                       
+                </li>
+              
+                <li>
+                  
+                       
+                         
+                           
+                             <a href="http://news.seoul.go.kr/culture/archives/508886" onclick="se_click_logging('http://www.seoul.go.kr/tr_code?tr_code=banner',location.href);" target="_blank">
+                               <img data-cu-seq="2015" width="355" height="122" src="/upload/popupZone/7dad2d8406234769b937f56d03b95ac4.jpg" alt="공공미술 시민발굴단 도슨트프로그램 참여시민 모집">
+                             </a>
+                           
                            
                          
                        
@@ -2903,10 +3025,11 @@ function fnGoDevicePage(){
 	 	}
 	 	
 	 	$("#indvd_left_list").html('');
-	 	com.ajax({
+	 	$.ajax({
 	 		type		: "POST"
 	 		,url		: "/indvdlsvc/indvdlSvcSourceList.do"
 	 		,data		: param
+	 		,dataType 	: "json"
 	 		,success: function(sdata){
 	 			var data    	= sdata.data;
 	 			var html_tr 	= "";
@@ -2990,10 +3113,11 @@ function fnGoDevicePage(){
 	// 대표홈페이지 에 처음 노출시킬 목록
 	function fnDvdSvc_BasicList(id){
 		
-	 	com.ajax({
+	 	$.ajax({
 	 		type		: "POST"
 	 		,url		: "/indvdlsvc/indvdListForHomepage.do"
 	 		,data		: {}
+	 		,dataType 	: "json"
 	 		,success: function(sdata){
 	 			fnDvdSvc_DistList_Homepage(id, sdata.data);
 	 		}
@@ -3155,6 +3279,7 @@ function fnMainHitClick(P_TYPE, P_SEQ){
     type    : "POST"
     ,url    : "/seoul/hitcount.do"
     ,data    : param
+    ,dataType 	: "json"
     ,success: function(sdata){
       return;
     }
@@ -3608,9 +3733,10 @@ function fnGetVisitorService(){
 }
 
 function fnGetVisitorServiceAjax(){
-  com.ajax({
+  $.ajax({
     type    : "POST"
     ,url    : "/visitor/getVisitorService.do"
+    ,dataType 	: "json"
     ,success: function(sdata){
 
       fnGetVisitorServiceLoad(sdata);
@@ -3641,15 +3767,18 @@ function fnGetVisitorServiceLoad(sdata){
 
       var recomList= "";
       var cutSvcNm = "";
+      var SERVICE_NAME = data.SERVICE_NAME;
+      SERVICE_NAME = SERVICE_NAME.replace("원순씨핫라인","시장핫라인").replace("원순씨에게 바랍니다","시장에게 바랍니다");
+      
       if(data.FLAG == "1") {
-        recomList+='<li  class="best" title="'+data.SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
+        recomList+='<li  class="best" title="'+SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
       } else {
-        recomList+='<li title="'+data.SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
+        recomList+='<li title="'+SERVICE_NAME+'" onclick="action_logging({tr_code:\'bookmark\'});">';
       }
-      if( (data.SERVICE_NAME).length > 11 ) {
-        cutSvcNm = (data.SERVICE_NAME).substr(0,11)+"...";
+      if( (SERVICE_NAME).length > 11 ) {
+        cutSvcNm = (SERVICE_NAME).substr(0,11)+"...";
       } else {
-        cutSvcNm = (data.SERVICE_NAME);
+        cutSvcNm = (SERVICE_NAME);
       }
       recomList+='<a href="'+data.SERVICE_URL+'" target="_blank" onclick="action_logging({tr_code:\'bookmark\'});">'+cutSvcNm+'</a></li>';
 
