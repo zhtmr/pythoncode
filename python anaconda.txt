@@ -17,16 +17,9 @@ ctrl + shift + p
 
 환경변수
  
-
-
-C:\ProgramData\Anaconda3\Scripts
-C:\ProgramData\Anaconda3\Library
-C:\ProgramData\Anaconda3
+C:\Users\c\anaconda3
+C:\Users\c\anaconda3\Library  
+C:\Users\c\anaconda3\Scripts
 
 
 
-C:\ProgramData\Anaconda3\pythonw.exe 
-C:\ProgramData\Anaconda3\cwp.py 
-C:\ProgramData\Anaconda3 
-C:\ProgramData\Anaconda3\pythonw.exe 
-C:\ProgramData\Anaconda3\Scripts\anaconda-navigator-script.py
