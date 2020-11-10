@@ -4,6 +4,7 @@ https://www.anaconda.com/products/individual 다운, 설치
 - create : jin
 - open terminal: pip install matplotlib
 - pip install pandas
+- pip install beautifulsoup4
 
 vscode plugin
 - code runner
