@@ -16,11 +16,12 @@ html = urllib.request.urlopen(url)
 
 soup = BeautifulSoup(html, "html.parser")
 review = soup.select("#review-list-page-area > ul > li > div")
-review1 = soup.select("#review-list-page-area > ul > li:nth-child(2) > div > div > div.cont_text_wrap > p")
+review1 = soup.select("#review-list-page-area > ul > li > div > div > div.cont_text_wrap > p")
 review2 = soup.select("#review-list-page-area > ul")
 # print(review2[0].text)
 
-for r in review2:
-    d=r.find("li").find("div").find("div", class_="cont_text_wrap").find("p").string
+for r in review1:
+    d=r.find("div").find("div", class_="cont_text_wrap").find("p").string
     print(d[0].text)
+    print(r.text)
 
